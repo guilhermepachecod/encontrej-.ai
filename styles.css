@@ -142,7 +142,7 @@ body {
   }
   .contact{
     color: #000;
-    background-color: lightblue;
+    background-color: #93A9FF;
   }
   .latest-updates{
     margin-top: 25%;
@@ -207,27 +207,53 @@ body {
     text-align: center;
     font-size: 50px;
   }
-  .card{
+  .card-ajudar{
     border-color: #93A9FF;
     border-radius: 0px;
     border-width: 2px;
     background-color: #191919;
     height: 100%;
   }
-  .card-title{
+  .card-title-ajudar{
     margin-top: 15%;
     margin-bottom: 15%;
     font-family: 'telegraf';
     font-weight: bold;
     color: #93A9FF;
   }
-  .card-img-top{
+  .card-img-top-ajudar{
     max-width: 250px;
     min-width: 250px;
     max-height: 250px;
     min-height: 250px;
   }
-  .card-text{
+  .card-text-ajudar{
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 1.5;
+    padding-bottom: 15%;
+  }
+  .card-result{
+    border-color: #93A9FF;
+    border-radius: 0px;
+    border-width: 2px;
+    background-color: #191919;
+    height: 100%;
+  }
+  .card-title-result{
+    margin-top: 15%;
+    margin-bottom: 15%;
+    font-family: 'telegraf';
+    font-weight: bold;
+    color: #93A9FF;
+  }
+  .card-img-top-result{
+    max-width: 250px;
+    min-width: 220px;
+    max-height: 250px;
+    min-height: 220px;
+  }
+  .card-text-result{
     font-weight: bold;
     font-size: 30px;
     line-height: 1.5;
@@ -290,6 +316,7 @@ body {
     cursor: pointer;
     margin-top: 10px;
   }
+  
   .cadastro{
     font-family: 'hk';
     background-color: #fff;
@@ -490,4 +517,28 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Define a cor de fundo com transparência */
   z-index: -1; /* Coloca o overlay atrás do conteúdo do modal */
+}
+.latest-updates {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+#lastupdates-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Distribui os cards uniformemente ao longo do contêiner */
+}
+
+.card-updates {
+  flex: 1 1 auto; /* Permitir que os cards cresçam e encolham conforme necessário */
+  max-width: calc(25% - 20px); /* Largura máxima para garantir até 4 colunas */
+  margin: 10px; /* Espaçamento entre os cards */
+  
+}
+
+@media screen and (max-width: 768px) {
+  .card-updates {
+    max-width: calc(33.33% - 20px); /* Largura máxima para garantir até 3 colunas em telas menores */
+  }
 }

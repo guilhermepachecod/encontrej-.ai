@@ -32,6 +32,12 @@ function uploadImage() {
       });
   }
 }
+function onloadPageUpdates() {
+      // Aqui você pode processar o arquivo selecionado
+      loadAPIUpdates().then(results => {
+        renderResultsUpdates(results);
+      });
+}
   // Função para buscar na API fictícia
 function searchAPI(formData) {
   // Aqui você fará a solicitação para a API, enviando os dados do formulário
@@ -64,23 +70,26 @@ function searchAPIimage(file) {
 // Função para renderizar os resultados na página
 function renderResults(results) {
   const resultsContainer = document.getElementById('results-container');
-
+  resultsContainer.innerHTML = '';
+  
   results.forEach(result => {
       // Criar um card para cada resultado
       const card = document.createElement('div');
       card.classList.add('card');
+      card.classList.add('card-result');
       card.classList.add('center');
       // Criar a imagem
       const image = document.createElement('img');
       image.src = result.imageUrl;
       image.alt = result.title;
-      image.classList.add('card-img-top');
+      image.classList.add('card-img-top-result');
       card.appendChild(image);
 
       // Criar o título
       const title = document.createElement('h5');
       title.textContent = result.title;
       title.classList.add('card-text');
+      title.classList.add('card-text-result');
       title.classList.add('white');
       card.appendChild(title);
       
@@ -88,6 +97,7 @@ function renderResults(results) {
       const description = document.createElement('p');
       description.textContent = result.description;
       description.classList.add('card-text');
+      description.classList.add('card-text-result');
       //card.appendChild(description);
       
       card.addEventListener('click', () => {
@@ -99,6 +109,52 @@ function renderResults(results) {
       resultsContainer.appendChild(card);
   });
 }
+function loadAPIUpdates() {
+  // Aqui você fará a solicitação para a API, enviando os dados do formulário
+  // e receberá a resposta da API
+  // Neste exemplo, vamos simular uma resposta da API
+  // O máximo de itens aqui não pode passar de 8
+  //pares ajustam melhor
+  const fakeApiResponse = [
+      { id: 1, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 1' },
+      { id: 2, imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsegredosdomundo.r7.com%2Fwp-content%2Fuploads%2F2019%2F07%2Fdescubra-agora-5-cuidados-que-se-deve-ter-com-os-filhotes-de-cachorro-2.jpg&f=1&nofb=1&ipt=931ce249445b42cf1f2c779963d6ada5a875345f46dabd00639057909e0b0f3b&ipo=images', title: 'Pet 2', description: 'Descrição do Pet 2' },
+      { id: 3, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 3', description: 'Descrição do Pet 3' },
+      { id: 4, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 4' },
+      { id: 1, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 1' },
+      { id: 2, imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsegredosdomundo.r7.com%2Fwp-content%2Fuploads%2F2019%2F07%2Fdescubra-agora-5-cuidados-que-se-deve-ter-com-os-filhotes-de-cachorro-2.jpg&f=1&nofb=1&ipt=931ce249445b42cf1f2c779963d6ada5a875345f46dabd00639057909e0b0f3b&ipo=images', title: 'Pet 2', description: 'Descrição do Pet 2' },
+      { id: 3, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 3', description: 'Descrição do Pet 3' },
+      { id: 4, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 4' },
+      // Mais resultados...
+  ];
+  // Retornar a resposta simulada da API
+  return Promise.resolve(fakeApiResponse);
+}
+function renderResultsUpdates(results) {
+  const resultsContainer = document.getElementById('lastupdates-container');
+  resultsContainer.innerHTML = ''; // Limpa o conteúdo do elemento
+
+  results.forEach(result => {
+    // Criar um card para cada resultado
+    const card = document.createElement('div');
+    card.classList.add('card-updates');
+    
+    // Criar a imagem
+    const image = document.createElement('img');
+    image.src = result.imageUrl;
+    image.alt = result.title;
+    image.classList.add('card-img-top');
+    card.appendChild(image);
+
+    card.addEventListener('click', () => {
+      // Abra o modal com as informações do card
+      openModal(result);
+    });
+
+    // Adicionar o card ao contêiner de resultados
+    resultsContainer.appendChild(card);
+  });
+}
+
 function openModal(result) {
       // Criar o modal
       const modal = document.createElement('div');

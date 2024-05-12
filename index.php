@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onload="onloadPageUpdates()">
 <script src="script.js"></script>
   <div class="d-none d-sm-block">
     <div class="header black">
@@ -41,18 +41,18 @@
       <h2>Como podemos ajudar você?</h2>
       <div class="options">
         <div class="option">
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">TUTOR</h5>
-            <p class="card-text">ESTOU À<br> PROCURA DO<br> MEU PET<br> PERDIDO</p>
+        <div class="card card-ajudar " style="width: 18rem;">
+          <div class="card-body-ajudar">
+            <h5 class="card-title-ajudar">TUTOR</h5>
+            <p class="card-text-ajudar">ESTOU À<br> PROCURA DO<br> MEU PET<br> PERDIDO</p>
           </div>
         </div>
         </div>
         <div class="option-right">
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">ABRIGOS E LARES TEMPORARIOS</h5>
-            <p class="card-text">QUERO<br> CADASTRAR<br> ANIMAIS<br> ENCONTRADOS.</p>
+        <div class="card card-ajudar" style="width: 18rem;">
+          <div class="card-body-ajudar">
+            <h5 class="card-title-ajudar">ABRIGOS E LARES TEMPORARIOS</h5>
+            <p class="card-text-ajudar">QUERO<br> CADASTRAR<br> ANIMAIS<br> ENCONTRADOS.</p>
           </div>
         </div>
         </div>
@@ -88,7 +88,7 @@
           <p>Clique aqui para anexar a <br>foto do seu pet</p>
         </div>
         <p class="instruction">Escolha uma foto nítida que seu pet esteja em<br> destaque e com boa resolução.</p>
-        <button onclick="uploadImage()">EncontreiJá.Ai</button>
+        <button onclick="uploadImage()">EncontreJá.Ai</button>
       </div>
       
     <div class="characteristics white">
@@ -133,7 +133,7 @@
           <label for="outras-caracteristicas">Seu pet tem alguma outra característica física que o diferencie dos demais?</label>
           <br><input type="text" id="outras-caracteristicas" name="outras-caracteristicas">
         </div>
-        <button type="button" onclick="submitForm()">EncontreiJá.Ai</button>
+        <button type="button" onclick="submitForm()">EncontreJá.Ai</button>
 </form>
 
     </div>
@@ -170,8 +170,8 @@
           </div>
           </div>
         </div>
-        <button onclick="registerPet()" class="cadastro">Cadastrar Pet</button>
-        <button onclick="finishRegistration()" class="cadastro">Concluir Cadastro</button>
+        <button onclick="registerPet()" class="cadastro">Cadastrar CACHORRO</button>
+        <button onclick="finishRegistration()" class="cadastro">Cadastrar GATO</button>
       </div>
     </div>
     </div>
@@ -180,11 +180,17 @@
       <p class="thank-you-sec">Você está ajudando muito neste <br>reencontro</p>
       <p class="thank-you-ter">EncontreJá.Ai</p>
     </div>
-    <div class="latest-updates">
+    <div class="latest-updates container">
+    <div class="row">
+    <div class="col-4">
         <p class="text-xl-left">ÚLTIMAS<br> ATUALIZAÇÕES<br>
             VEJA QUEM<br> CHEGOU NO<br> NOSSO BANCO<br> DE DADOS</p>
-          <div id="lastupdates">
+    </div>
+    <div class="col-8 lastupdates">
+          <div id="lastupdates-container">
           </div>
+    </div>
+    </div>
     </div>
       <div class="donations black">
         <div>
