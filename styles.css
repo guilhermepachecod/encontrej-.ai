@@ -1,0 +1,493 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+  }
+  @font-face {
+    font-family: 'antonio'; /* Nome da fonte personalizada */
+    src: url('fonts/antonio.ttf') format('truetype'); /* Caminho para o arquivo .ttf */
+  }
+  @font-face {
+    font-family: 'hk'; /* Nome da fonte personalizada */
+    src: url('fonts/hk.ttf') format('truetype'); /* Caminho para o arquivo .ttf */
+  }
+  @font-face {
+    font-family: 'telegraf'; /* Nome da fonte personalizada */
+    src: url('fonts/telegraf.otf') format('truetype'); /* Caminho para o arquivo .ttf */
+  }
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+/* Estilo CSS adicional para o cabeçalho */
+    .header {
+    background-color: black; /* Define a cor de fundo preta */
+    color: white; /* Define a cor do texto para branco */
+    height: 100vh; /* Define a altura do cabeçalho para ocupar toda a altura da tela */
+    display: flex;
+    align-items: center;
+    }
+    .dog-photo {
+    float: left;
+    margin-left: 0%;
+    width: 50%;
+    height: 100%;
+    }
+    .header-phone{
+      height: 100%; /* Define a altura do cabeçalho para ocupar toda a altura da tela */
+    display: flex;
+    align-items: center;
+    }
+    .dog-photo-phone {
+      width: 100%;
+    }
+    .text-content {
+    font-family:'antonio';
+    margin-left: 5%;
+    font-size: 30px;
+    
+    }
+    .text-content h1{
+        font-size: 60px;
+    }
+    .text-content-phone {
+      font-family:'antonio';
+      font-size: 30px;
+      
+      }
+      .text-content-phone h1{
+          font-size: 70px;
+      }
+    .texto-flutuante {
+        font-family:'hk';
+        position: absolute; /* Define a posição absoluta */
+        top: 10%; /* Define o topo a 50% do container */
+        left: 30%; /* Define a esquerda a 50% do container */
+        transform: translate(-50%, -50%); /* Centraliza o texto */
+        color: black; /* Cor do texto */
+        padding: 20px; /* Espaçamento interno */
+        
+      }
+    .texto-flutuante-phone {
+        font-family:'hk';
+        position: absolute; /* Define a posição absoluta */
+        top: 0%; /* Define o topo a 50% do container */
+        color: black; /* Cor do texto */
+        text-align: center;
+        
+    }
+      header h5{
+        font-family:'antonio';
+        font-size: 70px;
+      }
+      .texto-flutuante h2 {
+        font-size: 70px;
+        margin-left: 5px;
+        margin-top: 0; /* Remove a margem superior do título */
+      }
+
+  .title {
+    max-width: 50%;
+    margin-top: 25%;
+  }
+
+  h2{
+    text-transform: uppercase;
+    font-family:'antonio';
+    font-size: 70px;
+  }
+  h3{
+    font-family:'hk';
+    border: 2px solid black; /* Bordas pretas com largura de 2px */
+    padding: 10px; /* Apenas para mostrar a borda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'hk';
+    font-weight: bold;
+    font-size: 30px;
+    width: 50%;
+    margin-left: 25%;
+  }
+  h4{
+    font-family:'hk';
+    border: 2px solid white; /* Bordas pretas com largura de 2px */
+    padding: 10px; /* Apenas para mostrar a borda */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'hk';
+    font-weight: bold;
+    font-size: 30px;
+    width: 50%;
+    margin-left: 25%;
+  }
+  .subtitle {
+    font-size: 0.8em;
+  }
+  .white{
+    color: #000;
+    background-color: #fff;
+  }
+  .black{
+    color: #fff;
+    background-color: #191919;
+  }
+  .darkblack{
+    color: #fff;
+    background-color: #000;
+  }
+  .contact{
+    color: #000;
+    background-color: lightblue;
+  }
+  .latest-updates{
+    margin-top: 25%;
+    height: 800px;
+  }
+  .how-can-we-help, .upload-container, .characteristics, .results-container, .search-again, .thank-you, .latest-updates, .donations, .contact {
+    margin-top: 0;
+    text-align: center;
+    min-height: 700px;
+  }
+  
+  .how-can-we-help, .upload-container, .characteristics, .results-container, .search-again, .thank-you, .latest-updates, .donations, .contact h2{
+    padding-top: 50px;
+  }
+  .thank-you {
+    background-image: url('obrigado.png');
+    background-size: cover; /* Isso fará com que a imagem cubra todo o container */
+    background-position: center; /* Isso fará com que a imagem fique centralizada no container */
+    color: white; /* Cor do texto dentro do container */
+  }
+  .thank-you-pri{
+    font-family: "hk";
+    font-weight: bold;
+    font-size: 70px;
+    padding-top: 10%;
+    
+  }
+  .thank-you-sec{
+    font-family: "hk";
+    font-size: 30px;
+  }
+  .thank-you-ter{
+    font-size: 30px;
+    font-family: "hk";
+    color: #93A9FF;
+  }
+  .options {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .option {
+    left: 15%;
+    padding-right: 5%;
+  }
+  .option-right {
+    right:15%
+
+  }
+  .options-phone {
+    padding: 15%;
+    justify-content: center;
+  }
+  .option-phone {
+    padding-bottom: 10%;
+    justify-content: center;
+    text-align: center;
+  }
+  .h2-phone{
+    text-align: center;
+    font-size: 50px;
+  }
+  .card{
+    border-color: #93A9FF;
+    border-radius: 0px;
+    border-width: 2px;
+    background-color: #191919;
+    height: 100%;
+  }
+  .card-title{
+    margin-top: 15%;
+    margin-bottom: 15%;
+    font-family: 'telegraf';
+    font-weight: bold;
+    color: #93A9FF;
+  }
+  .card-img-top{
+    max-width: 250px;
+    min-width: 250px;
+    max-height: 250px;
+    min-height: 250px;
+  }
+  .card-text{
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 1.5;
+    padding-bottom: 15%;
+  }
+  .cardcad{
+    border-color: #fff;
+    border-radius: 0px;
+    border-width: 2px;
+    padding: 10px;
+    padding-top: 80px;
+    background-color: #191919;
+    height: 100%;
+  }
+  .cardcad-title{
+    font-family: 'hk';
+    font-weight: bold;
+    font-size: 25px;
+  }
+  .cardcad-text{
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 1.5;
+    padding-bottom: 15%;
+  }
+  .form-group{
+    text-align: center;
+    font-weight: bold;
+  }
+  .instruction{
+    font-family: 'hk';
+    color: gray;
+  }
+  .upload-box, button {
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+    border: 2px solid black; /* Bordas pretas com largura de 2px */
+    padding: 10px; /* Apenas para mostrar a borda */
+  }
+  .upload-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'hk';
+    font-weight: bold;
+    font-size: 30px;
+    width: 50%;
+    margin-left: 25%;
+    height: 300px;
+  }
+  button{
+    font-family: 'hk';
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .cadastro{
+    font-family: 'hk';
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 60px;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+  .text-xl-left{
+    font-family: 'antonio';
+    font-size: 60px;
+    padding-left: 15%;
+    text-align: left;
+    line-height: 1.2;
+  }
+  .primary{
+    font-family: 'antonio';
+    text-align: left;
+    padding-left: 5%;
+    font-size: 45px;
+  }
+  .secondary{
+    font-family: 'antonio';
+    text-align: left;
+    padding-left: 5%;
+    font-size: 20px;
+  }
+  .terciary{
+    font-family: 'telegraf';
+    text-align: left;
+    padding-left: 25%;
+    font-size: 15px;
+    color: #93A9FF;
+  }
+  .terciaryd{
+    font-family: 'telegraf';
+    text-align: left;
+    padding-left: 10%;
+    font-size: 15px;
+    color: #93A9FF;
+  }
+  .lista{
+    font-family: 'telegraf';
+    text-align: left;
+    padding-left: 25%;
+    font-size: 15px;
+  }
+  .pixright{
+    float: left;
+  }
+  .pixleft{
+    padding-top: 80px;
+  }
+  .pixbox{
+    
+    padding: 50px;
+    padding-left: 10px;
+    height: 100%;
+    margin-left: 50%;
+    background-color: #545454;
+  }
+  .pixbox-phone{
+    
+    padding: 50px;
+    padding-left: 10%;
+    height: 100%;
+    background-color: #545454;
+  }
+  .pix{
+    font-family: 'telegraf';
+    text-align: left;
+    padding-left: 10%;
+    padding-top: 0%;
+    font-size: 15px;
+  }
+  .rodape {
+    background-color: #333; /* Cor de fundo do rodapé */
+    text-align: center; /* Alinhamento do texto ao centro */
+  }
+  
+  .rodape a {
+    color: #888; /* Cor do link */
+    text-decoration: none; /* Remover sublinhado */
+  }
+  .contactleft{
+    margin-left: 10%;
+    text-align: left;
+    float: left;
+    padding-top: 160px;
+    
+  }
+  .text-contactleft{
+    font-family: "antonio";
+    text-align: left;
+    font-size: 60px;
+  }
+  .contactright{
+    width: 50%;
+    margin-left: 50%;
+    padding-top: 160px;
+    
+  }
+  .text-contactright{
+    color: #fff;
+    font-family: "antonio";
+    text-align: left;
+    font-size: 30px;
+    width: 50%;
+    padding-bottom: 80px;
+  }
+  .mini-contactright{
+    color: #fff;
+    font-family: "antonio";
+    text-align: left;
+    font-size: 15px;
+    width: 50%;
+  }
+  .contactright-phone{
+    margin-left: 5%;
+    padding-top: 160px;
+    
+  }
+  .text-contactright-phone{
+    color: #fff;
+    font-family: "antonio";
+    font-size: 30px;
+    padding-bottom: 80px;
+  }
+  .mini-contactright-phone{
+    color: #fff;
+    font-family: "antonio";
+    font-size: 15px;
+  }
+  /* Estilos para o modal */
+/* Estilos para o modal */
+/* Estilos para o modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  width: 500px;
+  height: 90%;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+
+.modal-card-img {
+  
+  width: 100%; /* Ajuste conforme necessário */
+  height: auto; /* Ajuste conforme necessário */
+  margin-right: 20px;
+}
+
+.modal-card-info {
+  flex: 1;
+}
+
+.modal-card-title {
+  margin: 0;
+  color: #000;
+}
+
+.modal-card-description {
+  margin-top: 5px;
+  color: #000;
+}
+
+/* Estilo para o overlay */
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Define a cor de fundo com transparência */
+  z-index: -1; /* Coloca o overlay atrás do conteúdo do modal */
+}
