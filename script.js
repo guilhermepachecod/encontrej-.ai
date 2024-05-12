@@ -64,6 +64,7 @@ function searchAPIimage(file) {
 // Função para renderizar os resultados na página
 function renderResults(results) {
   const resultsContainer = document.getElementById('results-container');
+  resultsContainer.innerHTML = '';
 
   results.forEach(result => {
       // Criar um card para cada resultado
