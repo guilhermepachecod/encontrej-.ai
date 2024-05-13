@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onload="onloadPageUpdates()">
 <script src="script.js"></script>
   <div class="d-none d-sm-block">
     <div class="header black">
@@ -41,20 +41,24 @@
       <h2>Como podemos ajudar você?</h2>
       <div class="options">
         <div class="option">
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">TUTOR</h5>
-            <p class="card-text">ESTOU À<br> PROCURA DO<br> MEU PET<br> PERDIDO</p>
+        <a class="none" href="#selecao">
+        <div class="card card-ajudar" style="width: 18rem;">
+          <div class="card-body-ajudar">
+            <h5 class="card-title-ajudar">TUTOR</h5>
+            <p class="card-text-ajudar">ESTOU À<br> PROCURA DO<br> MEU PET<br> PERDIDO</p>
           </div>
         </div>
+        </a>      
         </div>
         <div class="option-right">
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">ABRIGOS E LARES TEMPORARIOS</h5>
-            <p class="card-text">QUERO<br> CADASTRAR<br> ANIMAIS<br> ENCONTRADOS.</p>
+        <a class="none" href="#cadastrar">
+        <div class="card card-ajudar" style="width: 18rem;">
+          <div class="card-body-ajudar">
+            <h5 class="card-title-ajudar">ABRIGOS E LARES TEMPORARIOS</h5>
+            <p class="card-text-ajudar">QUERO<br> CADASTRAR<br> ANIMAIS<br> ENCONTRADOS.</p>
           </div>
         </div>
+        </a>
         </div>
       </div>
     </div>
@@ -64,20 +68,24 @@
       <h2 class="h2-phone">Como podemos ajudar você?</h2>
       <div class="options-phone">
         <div class="option-phone">
+        <a class="none" href="#selecao">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title">TUTOR</h5>
             <p class="card-text">ESTOU À<br> PROCURA DO<br> MEU PET<br> PERDIDO</p>
           </div>
         </div>
+        </a>
         </div>
         <div class="option-phone">
+        <a class="none" href="#cadastrar">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title">ABRIGOS E LARES TEMPORARIOS</h5>
             <p class="card-text">QUERO<br> CADASTRAR<br> ANIMAIS<br> ENCONTRADOS.</p>
           </div>
         </div>
+        </a>
         </div>
       </div>
     </div>
@@ -88,61 +96,84 @@
           <p>Clique aqui para anexar a <br>foto do seu pet</p>
         </div>
         <p class="instruction">Escolha uma foto nítida que seu pet esteja em<br> destaque e com boa resolução.</p>
-        <button onclick="uploadImage()">EncontreiJá.Ai</button>
+        <button onclick="uploadImage()">EncontreJá.Ai</button>
       </div>
       
-    <div class="characteristics white">
+    <div id="selecao" class="characteristics white">
       <h3>Selecione todas as características do <br>seu pet:</h3>
       <form id="pet-form">
-        <div class="form-group">
-          <label for="especie">Qual era a espécie do seu pet? Cachorro ou gato?</label>
-          <br>
-          <input type="text" id="especie" name="especie">
-        </div>
-        <div class="form-group">
-          <label for="raca">Qual é a raça do seu pet?</label>
-          <br>
-          <input type="text" id="raca" name="raca">
-        </div>
-        <div class="form-group">
-          <label for="porte">Qual o porte (tamanho) do seu pet?</label>
-          <br>
-          <input type="text" id="porte" name="porte">
-        </div>
-        <div class="form-group">
-          <label for="pelagem">Qual a cor da pelagem?</label>
-          <br>
-          <input type="text" id="pelagem" name="pelagem">
-        </div>
-        <div class="form-group">
-          <label for="sexo">Seu pet é macho ou fêmea?</label>
-          <br>
-          <input type="text" id="sexo" name="sexo">
-        </div>
-        <div class="form-group">
-          <label for="faixa-etaria">Seu pet é filhote, adulto ou idoso?</label>
-          <br>
-          <input type="text" id="faixa-etaria" name="faixa-etaria">
-        </div>
-        <div class="form-group">
-          <label for="cidade">Em qual cidade seu pet foi resgatado?</label>
-          <br>
-          <input type="text" id="cidade" name="cidade">
-        </div>
-        <div class="form-group">
-          <label for="outras-caracteristicas">Seu pet tem alguma outra característica física que o diferencie dos demais?</label>
-          <br><input type="text" id="outras-caracteristicas" name="outras-caracteristicas">
-        </div>
-        <button type="button" onclick="submitForm()">EncontreiJá.Ai</button>
+  <div class="form-group">
+    <label for="tipo">Tipo: (Cachorro ou Gato)</label><br>
+    <select id="tipo" name="tipo">
+      <option value="cachorro">Cachorro</option>
+      <option value="gato">Gato</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="raca">Raça:</label><br>
+    <select id="raca" name="raca" multiple>
+      <option value="poodle">Poodle</option>
+      <option value="labrador">Labrador</option>
+      <option value="siames">Siamês</option>
+      <!-- Adicione mais opções de raça aqui -->
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="porte">Porte: (Pequeno, Médio, Grande)</label><br>
+    <select id="porte" name="porte" multiple>
+      <option value="pequeno">Pequeno</option>
+      <option value="medio">Médio</option>
+      <option value="grande">Grande</option>
+      <!-- Adicione mais opções de porte aqui -->
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="cor">Cor:</label><br>
+    <select id="cor" name="cor" multiple>
+      <option value="preto">Preto</option>
+      <option value="branco">Branco</option>
+      <option value="marrom">Marrom</option>
+      <!-- Adicione mais opções de cor aqui -->
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="genero">Gênero: (Macho ou Fêmea)</label><br>
+    <select id="genero" name="genero">
+      <option value="macho">Macho</option>
+      <option value="femea">Fêmea</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="idade">Idade: (Filhote, Adulto, Idoso)</label><br>
+    <select id="idade" name="idade" multiple>
+      <option value="filhote">Filhote</option>
+      <option value="adulto">Adulto</option>
+      <option value="idoso">Idoso</option>
+      <!-- Adicione mais opções de idade aqui -->
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="observacoes">Observações:</label><br>
+    <textarea id="observacoes" name="observacoes"></textarea>
+  </div>
+  
+  <button type="button" onclick="submitForm()">EncontreJá.Ai</button>
 </form>
+
 
     </div>
     <div id="results" class="results-container white container text-justify">
-    <h3>RESULTADOS ENCONTRADOS</h3>
+    <h3 id="statusresultado" >RESULTADOS ENCONTRADOS</h3>
       <div id="results-container" class="row justify-content-center"></div>
     </div>
     <div class="d-none d-sm-block">
-    <div class="search-again darkblack">
+    <div id="cadastrar" class="search-again darkblack">
       <h4>Cadastro de animal <br>resgatado</h4>
       <div class="info-box">
         <div class="options">
@@ -170,8 +201,8 @@
           </div>
           </div>
         </div>
-        <button onclick="registerPet()" class="cadastro">Cadastrar Pet</button>
-        <button onclick="finishRegistration()" class="cadastro">Concluir Cadastro</button>
+        <button onclick="registerPet()" class="cadastro">Cadastrar CACHORRO</button>
+        <button onclick="finishRegistration()" class="cadastro">Cadastrar GATO</button>
       </div>
     </div>
     </div>
@@ -180,12 +211,59 @@
       <p class="thank-you-sec">Você está ajudando muito neste <br>reencontro</p>
       <p class="thank-you-ter">EncontreJá.Ai</p>
     </div>
-    <div class="latest-updates">
+    <div class="latest-updates container">
+    <div class="row">
+    <div class="col-4">
         <p class="text-xl-left">ÚLTIMAS<br> ATUALIZAÇÕES<br>
             VEJA QUEM<br> CHEGOU NO<br> NOSSO BANCO<br> DE DADOS</p>
-          <div id="lastupdates">
+    </div>
+    <div class="col-8 lastupdates">
+          <div id="lastupdates-container">
           </div>
     </div>
+    </div>
+    </div>
+    <div class="curiosidades black">
+          <h2 class="highlight-text">Três curiosidades</h2>
+          <div class="curiosidade">
+            <div class="curiosidade-text">
+              <p class="curiosidade-text-main">Como funciona?</p>
+              <p class="curiosidade-text-secondary">Nossa Inteligência Artificial - AI busca no banco de imagens pets com características físicas parecidas com a imagem e descrição que você forneceu.</p>
+            </div>
+          </div>
+          <div class="curiosidade">
+            <div class="curiosidade-text">
+              <p class="curiosidade-text-main">Atualização constante</p>
+              <p class="curiosidade-text-secondary">Nossos banco de dados são atualizados constantemente com informações dos grupos de resgates, abrigos e redes sociais.</p>
+            </div>
+          </div>
+          <div class="curiosidade">
+            <div class="curiosidade-text">
+              <p class="curiosidade-text-main">SOBRE A FOTO</p>
+              <p class="curiosidade-text-secondary">Escolha uma foto nítida que seu pet esteja em destaque e com boa resolução.</p>
+            </div>
+          </div>
+        </div>
+        <div class="parceiros black">
+        <h2 class="primary-parceiros">Redes e parceiros</h2>
+        <h2 class="terciary-parceiros">Conheça os heróis que estão salvando <br>e cuidando dos animais resgatados.</h2>
+        <div class="container container-parceiros">
+          <div class="image-container">
+            <img src="imagem1.png" alt="Imagem 1">
+          </div>
+          <div class="image-container">
+            <img src="imagem2.png" alt="Imagem 2">
+          </div>
+          <div class="image-container">
+            <img src="imagem3.png" alt="Imagem 3">
+          </div>
+          <div class="image-container">
+            <img src="imagem4.png" alt="Imagem 4">
+          </div>
+        </div>
+
+      </div>
+      </div>
       <div class="donations black">
         <div>
             <p class="primary">OS ABRIGOS PRECISAM DE DOAÇÕES</p>
@@ -216,6 +294,7 @@
           </div>
         </div>
         </div>
+        
         <div class="d-block d-sm-none">
         <div>
         <div class="">
@@ -244,6 +323,7 @@
       </div>
       </div>
       </div>
+
     <div class="contact">
       <div class="contactleft"><p class="text-contactleft">QUER AJUDAR OU <br>COLABORAR DE <br>ALGUMA FORMA?</p>
     </div>

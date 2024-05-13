@@ -112,6 +112,19 @@ body {
     width: 50%;
     margin-left: 25%;
   }
+  .diverro{
+    font-family:'hk';
+    border: 1px solid black; /* Bordas pretas com largura de 2px */
+    padding: 10px; /* Apenas para mostrar a borda */
+    justify-content: center;
+    text-align: center;
+    font-family: 'hk';
+    font-size: 20px;
+    width: 50%;
+  }
+  .pbold{
+    font-weight: bold;
+  }
   h4{
     font-family:'hk';
     border: 2px solid white; /* Bordas pretas com largura de 2px */
@@ -142,7 +155,7 @@ body {
   }
   .contact{
     color: #000;
-    background-color: lightblue;
+    background-color: #93A9FF;
   }
   .latest-updates{
     margin-top: 25%;
@@ -207,31 +220,56 @@ body {
     text-align: center;
     font-size: 50px;
   }
-  .card{
+  .card-ajudar{
     border-color: #93A9FF;
     border-radius: 0px;
     border-width: 2px;
     background-color: #191919;
     height: 100%;
   }
-  .card-title{
+  .card-title-ajudar{
     margin-top: 15%;
     margin-bottom: 15%;
     font-family: 'telegraf';
     font-weight: bold;
     color: #93A9FF;
   }
-  .card-img-top{
+  .card-img-top-ajudar{
     max-width: 250px;
     min-width: 250px;
     max-height: 250px;
     min-height: 250px;
   }
-  .card-text{
+  .card-text-ajudar{
     font-weight: bold;
     font-size: 30px;
     line-height: 1.5;
     padding-bottom: 15%;
+  }
+  .card-result{
+
+    height: 100%;
+    margin: 10px;
+  }
+  .card-title-result{
+    margin-top: 15%;
+    margin-bottom: 15%;
+    font-family: 'telegraf';
+    color: #93A9FF;
+    text-align: center;
+    background-color: #888;
+  }
+  .card-img-top-result{
+    max-width: 250px;
+    min-width: 220px;
+    max-height: 250px;
+    min-height: 220px;
+  }
+  .card-text-result{
+    font-family: 'telegraf';
+    text-align: center;
+    background-color: #D9D9D9;
+    padding: 10px;
   }
   .cardcad{
     border-color: #fff;
@@ -290,6 +328,7 @@ body {
     cursor: pointer;
     margin-top: 10px;
   }
+  
   .cadastro{
     font-family: 'hk';
     background-color: #fff;
@@ -490,4 +529,113 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Define a cor de fundo com transparência */
   z-index: -1; /* Coloca o overlay atrás do conteúdo do modal */
+}
+.latest-updates {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
+}
+
+#lastupdates-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Distribui os cards uniformemente ao longo do contêiner */
+}
+
+.card-updates {
+  flex: 1 1 auto; /* Permitir que os cards cresçam e encolham conforme necessário */
+  max-width: calc(25% - 20px); /* Largura máxima para garantir até 4 colunas */
+  margin: 10px; /* Espaçamento entre os cards */
+  
+}
+
+@media screen and (max-width: 768px) {
+  .card-updates {
+    max-width: calc(33.33% - 20px); /* Largura máxima para garantir até 3 colunas em telas menores */
+  }
+}
+.none{
+  color: inherit; 
+  text-decoration: inherit;
+}
+.none:hover {
+  background-color: blue;
+  color: white; 
+  text-decoration: none;
+}
+#statusresultado{
+  text-align: center;
+}
+.curiosidades{
+  padding: 60px;
+  padding-top: 20px;
+}
+.highlight-text{
+  font-family: 'antonio';
+  text-align: center;
+  font-size: 45px;
+  padding-bottom: 20px;
+}
+.curiosidade {
+  display: flex;
+
+  border: 2px solid #93A9FF;
+  padding: 10px;
+  width: 75%; 
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Duas colunas de largura automática */
+  gap: 20px; /* Espaço entre as caixas */
+}
+.curiosidade-text-main{
+  font-family: "antonio";
+  font-size: 30px;
+  float: left;
+  width: 320px;
+  margin-left: 50px;
+  margin-right: 30px;
+  padding-left: 20px;
+  padding-top: 25px;
+  align-items: center; 
+}
+.curiosidade-text-secondary{
+  align-items: center; 
+  padding: 25px;
+  font-family: "telegraf";
+  color: #93A9FF;
+}  
+.primary-parceiros{
+  float: left;
+  font-family: 'antonio';
+  text-align: left;
+  padding-left: 5%;
+  font-size: 45px;
+}
+.terciary-parceiros{
+  font-family: 'telegraf';
+  margin-left: 30%;
+  text-align: left;
+  padding-left: 25%;
+  font-size: 15px;
+  color: #93A9FF;
+}
+.container-parceiros {
+  display: flex;
+  margin-top: 60px;
+  justify-content: space-around; /* Para espaçar uniformemente as imagens */
+  align-items: center; /* Para centralizar verticalmente as imagens */
+}
+
+.image-container {
+  width: 25%; /* Cada imagem ocupará 25% da largura do contêiner pai */
+}
+
+img {
+  max-width: 100%; /* Para garantir que as imagens não ultrapassem o contêiner */
+}
+
+.centered-word {
+  text-align: center; /* Centralizar horizontalmente a palavra */
 }
