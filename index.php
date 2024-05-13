@@ -10,6 +10,7 @@
 </head>
 <body onload="onloadPageUpdates()">
 <script src="script.js"></script>
+<script src="utils.js"></script>
   <div class="d-none d-sm-block">
     <div class="header black">
       <img src="cachorro.png" alt="Foto de um cachorro" class="dog-photo">

@@ -1,20 +1,21 @@
-  function submitForm() {
+const arrElementValues = (element) => Array.from(element.selectedOptions).map(option => option.value);
+
+function submitForm() {    
     // Obtém os dados do formulário
-    var formData = {
-      especie: document.getElementById("tipo").value,
-      raca: Array.from(document.getElementById("raca").selectedOptions).map(option => option.value),
-      porte: Array.from(document.getElementById("porte").selectedOptions).map(option => option.value),
-      pelagem: Array.from(document.getElementById("cor").selectedOptions).map(option => option.value),
-      sexo: document.getElementById("genero").value,
-      faixa_etaria: Array.from(document.getElementById("idade").selectedOptions).map(option => option.value),
-      observacoes: document.getElementById("observacoes").value
-    };
+    var formData = validatePet({
+      type: document.getElementById("tipo").value,
+      breed: arrElementValues(document.getElementById("raca")),
+      size: arrElementValues(document.getElementById("porte")),
+      color: arrElementValues(document.getElementById("cor")),
+      gender: document.getElementById("genero").value,
+      age: arrElementValues(document.getElementById("idade")),
+      observations: document.getElementById("observacoes").value
+    });
     
     console.log(formData);
-    
-    searchAPI(formData).then(results => {
-      renderResults(results);
-    });
+    // searchAPI(formData).then(results => {
+    //   renderResults(results);
+    // });
     // Aqui você pode adicionar código para enviar os dados para o Forms do Google ou outro destino desejado
   }
   function openFilePicker() {
