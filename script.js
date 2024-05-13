@@ -44,12 +44,12 @@ function searchAPI(formData) {
   // e receberá a resposta da API
   // Neste exemplo, vamos simular uma resposta da API
   const fakeApiResponse = [
-      { id: 1, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 1' },
-      { id: 2, imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsegredosdomundo.r7.com%2Fwp-content%2Fuploads%2F2019%2F07%2Fdescubra-agora-5-cuidados-que-se-deve-ter-com-os-filhotes-de-cachorro-2.jpg&f=1&nofb=1&ipt=931ce249445b42cf1f2c779963d6ada5a875345f46dabd00639057909e0b0f3b&ipo=images', title: 'Pet 2', description: 'Descrição do Pet 2' },
-      { id: 3, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 3', description: 'Descrição do Pet 3' },
-      { id: 4, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 4' },
-      // Mais resultados...
-  ];
+    { id: 1, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 1' },
+    { id: 2, imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsegredosdomundo.r7.com%2Fwp-content%2Fuploads%2F2019%2F07%2Fdescubra-agora-5-cuidados-que-se-deve-ter-com-os-filhotes-de-cachorro-2.jpg&f=1&nofb=1&ipt=931ce249445b42cf1f2c779963d6ada5a875345f46dabd00639057909e0b0f3b&ipo=images', title: 'Pet 2', description: 'Descrição do Pet 2' },
+    { id: 3, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 3', description: 'Descrição do Pet 3' },
+    { id: 4, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 4' },
+    // Mais resultados...
+];
   // Retornar a resposta simulada da API
   return Promise.resolve(fakeApiResponse);
 }
@@ -67,12 +67,44 @@ function searchAPIimage(file) {
   // Retornar a resposta simulada da API
   return Promise.resolve(fakeApiResponse);
 }
-// Função para renderizar os resultados na página
 function renderResults(results) {
   const resultsContainer = document.getElementById('results-container');
   resultsContainer.innerHTML = '';
-  
-  results.forEach(result => {
+
+  // Verifica se há resultados
+  if (results.length === 0) {
+    // Se não houver resultados, exibe uma mensagem de aviso
+    const statusresultado = document.getElementById('statusresultado');
+    statusresultado.innerHTML = 'Não encontramos <br>resultados para a sua <br>pesquisa.';
+    
+    const noResultsDIV = document.createElement('div');
+    const noResultsMessageA = document.createElement('p');
+    noResultsMessageA.textContent = 'Isso pode ocorrer por alguns fatores:';
+    noResultsMessageA.classList.add('pbold');
+    noResultsDIV.appendChild(noResultsMessageA);
+    noResultsDIV.appendChild(document.createElement('br'));
+    const noResultsMessageB = document.createElement('p');
+    noResultsMessageB.textContent = 'Não está disponível no banco de dados. Foto com diferenças muito grandes de iluminação e ângulo.';
+    noResultsMessageB.classList.add('perro');
+    noResultsDIV.appendChild(noResultsMessageB);
+    noResultsDIV.appendChild(document.createElement('br'));
+    const noResultsMessageC = document.createElement('p');
+    noResultsMessageC.textContent = 'Não perca suas esperanças. Nosso cadastro é atualizado diariamente e faremos tudo para reunir vocês novamente. Volte em breve';
+    noResultsMessageC.classList.add('perro');
+    noResultsDIV.appendChild(noResultsMessageC);
+
+    noResultsDIV.appendChild(document.createElement('br'));
+    const noResultsButton = document.createElement('button');
+    noResultsButton.textContent = 'REFAZER BUSCA';
+    noResultsButton.addEventListener('click', function() {
+      document.getElementById('selecao').scrollIntoView({ behavior: 'smooth' });
+  });
+    noResultsDIV.appendChild(noResultsButton);
+    
+    noResultsDIV.classList.add('diverro');
+    resultsContainer.appendChild(noResultsDIV);
+  } else {
+    results.forEach(result => {
       // Criar um card para cada resultado
       const card = document.createElement('div');
       card.classList.add('card');
@@ -92,23 +124,28 @@ function renderResults(results) {
       title.classList.add('card-text-result');
       title.classList.add('white');
       card.appendChild(title);
-      
+
       // Criar a descrição
       const description = document.createElement('p');
       description.textContent = result.description;
       description.classList.add('card-text');
       description.classList.add('card-text-result');
       //card.appendChild(description);
-      
+
       card.addEventListener('click', () => {
         // Abra o modal com as informações do card
         openModal(result);
       });
-      
+
       // Adicionar o card ao contêiner de resultados
       resultsContainer.appendChild(card);
-  });
+    });
+  }
+
+  // Mova o scroll para a seção de resultados
+  document.getElementById('results').scrollIntoView({ behavior: 'smooth' });
 }
+
 function loadAPIUpdates() {
   // Aqui você fará a solicitação para a API, enviando os dados do formulário
   // e receberá a resposta da API

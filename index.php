@@ -41,20 +41,24 @@
       <h2>Como podemos ajudar você?</h2>
       <div class="options">
         <div class="option">
-        <div class="card card-ajudar " style="width: 18rem;">
+        <a class="none" href="#selecao">
+        <div class="card card-ajudar" style="width: 18rem;">
           <div class="card-body-ajudar">
             <h5 class="card-title-ajudar">TUTOR</h5>
             <p class="card-text-ajudar">ESTOU À<br> PROCURA DO<br> MEU PET<br> PERDIDO</p>
           </div>
         </div>
+        </a>      
         </div>
         <div class="option-right">
+        <a class="none" href="#cadastrar">
         <div class="card card-ajudar" style="width: 18rem;">
           <div class="card-body-ajudar">
             <h5 class="card-title-ajudar">ABRIGOS E LARES TEMPORARIOS</h5>
             <p class="card-text-ajudar">QUERO<br> CADASTRAR<br> ANIMAIS<br> ENCONTRADOS.</p>
           </div>
         </div>
+        </a>
         </div>
       </div>
     </div>
@@ -91,7 +95,7 @@
         <button onclick="uploadImage()">EncontreJá.Ai</button>
       </div>
       
-    <div class="characteristics white">
+    <div id="selecao" class="characteristics white">
       <h3>Selecione todas as características do <br>seu pet:</h3>
       <form id="pet-form">
         <div class="form-group">
@@ -138,11 +142,11 @@
 
     </div>
     <div id="results" class="results-container white container text-justify">
-    <h3>RESULTADOS ENCONTRADOS</h3>
+    <h3 id="statusresultado" >RESULTADOS ENCONTRADOS</h3>
       <div id="results-container" class="row justify-content-center"></div>
     </div>
     <div class="d-none d-sm-block">
-    <div class="search-again darkblack">
+    <div id="cadastrar" class="search-again darkblack">
       <h4>Cadastro de animal <br>resgatado</h4>
       <div class="info-box">
         <div class="options">
