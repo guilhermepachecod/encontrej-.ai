@@ -223,6 +223,47 @@
     </div>
     </div>
     </div>
+    <div class="curiosidades black">
+          <h2 class="highlight-text">Três curiosidades</h2>
+          <div class="curiosidade">
+            <div class="curiosidade-text">
+              <p class="curiosidade-text-main">Como funciona?</p>
+              <p class="curiosidade-text-secondary">Nossa Inteligência Artificial - AI busca no banco de imagens pets com características físicas parecidas com a imagem e descrição que você forneceu.</p>
+            </div>
+          </div>
+          <div class="curiosidade">
+            <div class="curiosidade-text">
+              <p class="curiosidade-text-main">Atualização constante</p>
+              <p class="curiosidade-text-secondary">Nossos banco de dados são atualizados constantemente com informações dos grupos de resgates, abrigos e redes sociais.</p>
+            </div>
+          </div>
+          <div class="curiosidade">
+            <div class="curiosidade-text">
+              <p class="curiosidade-text-main">SOBRE A FOTO</p>
+              <p class="curiosidade-text-secondary">Escolha uma foto nítida que seu pet esteja em destaque e com boa resolução.</p>
+            </div>
+          </div>
+        </div>
+        <div class="parceiros black">
+        <h2 class="primary-parceiros">Redes e parceiros</h2>
+        <h2 class="terciary-parceiros">Conheça os heróis que estão salvando <br>e cuidando dos animais resgatados.</h2>
+        <div class="container container-parceiros">
+          <div class="image-container">
+            <img src="imagem1.png" alt="Imagem 1">
+          </div>
+          <div class="image-container">
+            <img src="imagem2.png" alt="Imagem 2">
+          </div>
+          <div class="image-container">
+            <img src="imagem3.png" alt="Imagem 3">
+          </div>
+          <div class="image-container">
+            <img src="imagem4.png" alt="Imagem 4">
+          </div>
+        </div>
+
+      </div>
+      </div>
       <div class="donations black">
         <div>
             <p class="primary">OS ABRIGOS PRECISAM DE DOAÇÕES</p>
@@ -253,6 +294,7 @@
           </div>
         </div>
         </div>
+        
         <div class="d-block d-sm-none">
         <div>
         <div class="">
@@ -281,6 +323,7 @@
       </div>
       </div>
       </div>
+
     <div class="contact">
       <div class="contactleft"><p class="text-contactleft">QUER AJUDAR OU <br>COLABORAR DE <br>ALGUMA FORMA?</p>
     </div>
