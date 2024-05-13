@@ -112,7 +112,7 @@
   
   <div class="form-group">
     <label for="raca">Raça:</label><br>
-    <select id="raca" name="raca">
+    <select id="raca" name="raca" multiple>
       <option value="poodle">Poodle</option>
       <option value="labrador">Labrador</option>
       <option value="siames">Siamês</option>
@@ -122,7 +122,7 @@
   
   <div class="form-group">
     <label for="porte">Porte: (Pequeno, Médio, Grande)</label><br>
-    <select id="porte" name="porte">
+    <select id="porte" name="porte" multiple>
       <option value="pequeno">Pequeno</option>
       <option value="medio">Médio</option>
       <option value="grande">Grande</option>
@@ -132,7 +132,7 @@
   
   <div class="form-group">
     <label for="cor">Cor:</label><br>
-    <select id="cor" name="cor">
+    <select id="cor" name="cor" multiple>
       <option value="preto">Preto</option>
       <option value="branco">Branco</option>
       <option value="marrom">Marrom</option>
@@ -150,7 +150,7 @@
   
   <div class="form-group">
     <label for="idade">Idade: (Filhote, Adulto, Idoso)</label><br>
-    <select id="idade" name="idade">
+    <select id="idade" name="idade" multiple>
       <option value="filhote">Filhote</option>
       <option value="adulto">Adulto</option>
       <option value="idoso">Idoso</option>
