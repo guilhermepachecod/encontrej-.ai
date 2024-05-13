@@ -84,6 +84,9 @@ body {
         font-size: 70px;
       }
       .texto-flutuante h2 {
+        font-family: "hk";
+        font-weight: normal;
+        text-transform: none;
         font-size: 70px;
         margin-left: 5px;
         margin-top: 0; /* Remove a margem superior do título */
@@ -599,6 +602,7 @@ body {
   padding-left: 20px;
   padding-top: 25px;
   align-items: center; 
+  text-transform: uppercase;
 }
 .curiosidade-text-secondary{
   align-items: center; 

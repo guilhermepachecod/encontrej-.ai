@@ -12,10 +12,10 @@
 <script src="script.js"></script>
 <script src="utils.js"></script>
   <div class="d-none d-sm-block">
-    <div class="header black">
+    <div class="header black container">
       <img src="cachorro.png" alt="Foto de um cachorro" class="dog-photo">
       <div class="texto-flutuante">
-        <h2>EncontreJá.Ai</h2>
+        <h2 >EncontreJá.Ai</h2>
       </div>
       <div class="text-content">
         <h1 >NÓS AJUDAMOS <br>VOCÊ A <br>ENCONTRAR SEU <br>PET PERDIDO <br>NAS ENCHENTES <br>DO RS</h1>
@@ -129,12 +129,16 @@
   <div class="form-group">
     <label>Porte: (Pequeno, Médio, Grande)</label><br>
     <div class="checkbox-group" id="porte">
+      <input type="checkbox" id="mini" name="porte" value="mini">
+      <label for="mini">Mini</label>
       <input type="checkbox" id="pequeno" name="porte" value="pequeno">
       <label for="pequeno">Pequeno</label>
       <input type="checkbox" id="medio" name="porte" value="medio">
       <label for="medio">Médio</label>
       <input type="checkbox" id="grande" name="porte" value="grande">
       <label for="grande">Grande</label>
+      <input type="checkbox" id="gigante" name="porte" value="gigante">
+      <label for="gigante">Gigante</label>
       <!-- Adicione mais opções de porte aqui -->
     </div>
   </div>
