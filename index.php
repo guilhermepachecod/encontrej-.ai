@@ -68,20 +68,24 @@
       <h2 class="h2-phone">Como podemos ajudar você?</h2>
       <div class="options-phone">
         <div class="option-phone">
+        <a class="none" href="#selecao">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title">TUTOR</h5>
             <p class="card-text">ESTOU À<br> PROCURA DO<br> MEU PET<br> PERDIDO</p>
           </div>
         </div>
+        </a>
         </div>
         <div class="option-phone">
+        <a class="none" href="#cadastrar">
         <div class="card" style="width: 18rem;">
           <div class="card-body">
             <h5 class="card-title">ABRIGOS E LARES TEMPORARIOS</h5>
             <p class="card-text">QUERO<br> CADASTRAR<br> ANIMAIS<br> ENCONTRADOS.</p>
           </div>
         </div>
+        </a>
         </div>
       </div>
     </div>
@@ -98,47 +102,70 @@
     <div id="selecao" class="characteristics white">
       <h3>Selecione todas as características do <br>seu pet:</h3>
       <form id="pet-form">
-        <div class="form-group">
-          <label for="especie">Qual era a espécie do seu pet? Cachorro ou gato?</label>
-          <br>
-          <input type="text" id="especie" name="especie">
-        </div>
-        <div class="form-group">
-          <label for="raca">Qual é a raça do seu pet?</label>
-          <br>
-          <input type="text" id="raca" name="raca">
-        </div>
-        <div class="form-group">
-          <label for="porte">Qual o porte (tamanho) do seu pet?</label>
-          <br>
-          <input type="text" id="porte" name="porte">
-        </div>
-        <div class="form-group">
-          <label for="pelagem">Qual a cor da pelagem?</label>
-          <br>
-          <input type="text" id="pelagem" name="pelagem">
-        </div>
-        <div class="form-group">
-          <label for="sexo">Seu pet é macho ou fêmea?</label>
-          <br>
-          <input type="text" id="sexo" name="sexo">
-        </div>
-        <div class="form-group">
-          <label for="faixa-etaria">Seu pet é filhote, adulto ou idoso?</label>
-          <br>
-          <input type="text" id="faixa-etaria" name="faixa-etaria">
-        </div>
-        <div class="form-group">
-          <label for="cidade">Em qual cidade seu pet foi resgatado?</label>
-          <br>
-          <input type="text" id="cidade" name="cidade">
-        </div>
-        <div class="form-group">
-          <label for="outras-caracteristicas">Seu pet tem alguma outra característica física que o diferencie dos demais?</label>
-          <br><input type="text" id="outras-caracteristicas" name="outras-caracteristicas">
-        </div>
-        <button type="button" onclick="submitForm()">EncontreJá.Ai</button>
+  <div class="form-group">
+    <label for="tipo">Tipo: (Cachorro ou Gato)</label><br>
+    <select id="tipo" name="tipo">
+      <option value="cachorro">Cachorro</option>
+      <option value="gato">Gato</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="raca">Raça:</label><br>
+    <select id="raca" name="raca">
+      <option value="poodle">Poodle</option>
+      <option value="labrador">Labrador</option>
+      <option value="siames">Siamês</option>
+      <!-- Adicione mais opções de raça aqui -->
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="porte">Porte: (Pequeno, Médio, Grande)</label><br>
+    <select id="porte" name="porte">
+      <option value="pequeno">Pequeno</option>
+      <option value="medio">Médio</option>
+      <option value="grande">Grande</option>
+      <!-- Adicione mais opções de porte aqui -->
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="cor">Cor:</label><br>
+    <select id="cor" name="cor">
+      <option value="preto">Preto</option>
+      <option value="branco">Branco</option>
+      <option value="marrom">Marrom</option>
+      <!-- Adicione mais opções de cor aqui -->
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="genero">Gênero: (Macho ou Fêmea)</label><br>
+    <select id="genero" name="genero">
+      <option value="macho">Macho</option>
+      <option value="femea">Fêmea</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="idade">Idade: (Filhote, Adulto, Idoso)</label><br>
+    <select id="idade" name="idade">
+      <option value="filhote">Filhote</option>
+      <option value="adulto">Adulto</option>
+      <option value="idoso">Idoso</option>
+      <!-- Adicione mais opções de idade aqui -->
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="observacoes">Observações:</label><br>
+    <textarea id="observacoes" name="observacoes"></textarea>
+  </div>
+  
+  <button type="button" onclick="submitForm()">EncontreJá.Ai</button>
 </form>
+
 
     </div>
     <div id="results" class="results-container white container text-justify">
