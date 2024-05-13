@@ -12,15 +12,20 @@ function submitForm() {
       observations: document.getElementById("observacoes").value
     });
     
-    console.log(formData);
-    // searchAPI(formData).then(results => {
-    //   renderResults(results);
-    // });
+    searchAPI(formData)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        renderResults(data)
+      })
+      .catch(err => console.error('Erro ao buscar dados:', err));
+
     // Aqui você pode adicionar código para enviar os dados para o Forms do Google ou outro destino desejado
   }
   function openFilePicker() {
     document.getElementById('fileInput').click();
 }
+
 function uploadImage() {
   var fileInput = document.getElementById('fileInput');
   var file = fileInput.files[0];
@@ -32,6 +37,7 @@ function uploadImage() {
       });
   }
 }
+
 function onloadPageUpdates() {
       // Aqui você pode processar o arquivo selecionado
       loadAPIUpdates().then(results => {
@@ -47,20 +53,16 @@ function onloadPageUpdates() {
       });
 }
   // Função para buscar na API fictícia
-function searchAPI(formData) {
-  // Aqui você fará a solicitação para a API, enviando os dados do formulário
-  // e receberá a resposta da API
-  // Neste exemplo, vamos simular uma resposta da API
-  const fakeApiResponse = [
-    { id: 1, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 1' },
-    { id: 2, imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsegredosdomundo.r7.com%2Fwp-content%2Fuploads%2F2019%2F07%2Fdescubra-agora-5-cuidados-que-se-deve-ter-com-os-filhotes-de-cachorro-2.jpg&f=1&nofb=1&ipt=931ce249445b42cf1f2c779963d6ada5a875345f46dabd00639057909e0b0f3b&ipo=images', title: 'Pet 2', description: 'Descrição do Pet 2' },
-    { id: 3, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 3', description: 'Descrição do Pet 3' },
-    { id: 4, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 4' },
-    // Mais resultados...
-];
-  // Retornar a resposta simulada da API
-  return Promise.resolve(fakeApiResponse);
-}
+  function searchAPI(formData) {
+    const query = queryString(formData);
+    console.log(query);
+    const url = `https://encontreja-ai.vercel.app/api/pet?${query}`;
+    
+    var res = fetch(url);
+ 
+    return Promise.resolve(res)
+ }
+ 
 function searchAPIimage(file) {
   // Aqui você fará a solicitação para a API, enviando os dados do formulário
   // e receberá a resposta da API
@@ -157,14 +159,14 @@ function renderResults(results) {
       card.classList.add('center');
       // Criar a imagem
       const image = document.createElement('img');
-      image.src = result.imageUrl;
-      image.alt = result.title;
+      image.src = result.imgUrl;
+      image.alt = result.location;
       image.classList.add('card-img-top-result');
       card.appendChild(image);
 
       // Criar o título
       const title = document.createElement('h5');
-      title.textContent = result.title;
+      title.textContent = result.location;
       title.classList.add('card-text');
       title.classList.add('card-text-result');
       title.classList.add('white');
@@ -172,7 +174,7 @@ function renderResults(results) {
 
       // Criar a descrição
       const description = document.createElement('p');
-      description.textContent = result.description;
+      description.textContent = result.observations ? result.observations : 'Sem descrição';
       description.classList.add('card-text');
       description.classList.add('card-text-result');
       //card.appendChild(description);
@@ -203,8 +205,8 @@ function renderResultsUpdates(results) {
     
     // Criar a imagem
     const image = document.createElement('img');
-    image.src = result.imageUrl;
-    image.alt = result.title;
+    image.src = result.imgUrl;
+    image.alt = result.location;
     image.classList.add('card-img-top');
     card.appendChild(image);
 
@@ -239,10 +241,10 @@ function openModal(result) {
           <button class="modal-close-btn" onclick="closeModal()">X</button>
           </div>
               <div class="modal-card">
-                  <img src="${result.imageUrl}" alt="${result.title}" class="modal-card-img">
+                  <img src="${result.imgUrl}" alt="${result.location}" class="modal-card-img">
                   <div class="modal-card-info">
-                      <h5 class="modal-card-title">${result.title}</h5>
-                      <p class="modal-card-description">${result.description}</p>
+                      <h5 class="modal-card-title">${result.location}</h5>
+                      <p class="modal-card-description">${result.observations}</p>
                   </div>
               </div>
           </div>

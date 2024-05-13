@@ -6,7 +6,7 @@ const validateStrOrArray = (strOrArray) => {
    if (Array.isArray(strOrArray)) {
       return strOrArray.filter(str => !isStringNullOrEmpty(str));
    }
-   console.log('strOrArray:', strOrArray);
+
    return isStringNullOrEmpty(strOrArray) ? undefined : strOrArray;
 }
 
@@ -21,16 +21,6 @@ const validatePet = ({ type, breed, size, color, gender, age, location, observat
       location: validateStrOrArray(location),
       observations: validateStrOrArray(observations),
    }
-}
-
-function searchAPI(formData) {
-   const query = queryString(formData);
-   const url = `https://encontreja-ai.vercel.app/api/pet?${query}`;
-   console.log('URL:', url);
-
-   var res = fetch(url);
-
-   return Promise.resolve(res)
 }
 
 const queryString = (params) => Object.entries(params)
