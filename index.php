@@ -102,65 +102,82 @@
     <div id="selecao" class="characteristics white">
       <h3>Selecione todas as características do <br>seu pet:</h3>
       <form id="pet-form">
-  <div class="form-group">
-    <label for="tipo">Tipo: (Cachorro ou Gato)</label><br>
-    <select id="tipo" name="tipo">
-      <option value="cachorro">Cachorro</option>
-      <option value="gato">Gato</option>
-    </select>
+      <div class="form-group">
+  <label for="tipo">Tipo: (Cachorro ou Gato)</label><br>
+  <div class="checkbox-group">
+    <input type="radio" id="cachorro" name="tipo" value="cachorro">
+    <label for="cachorro">Cachorro</label>
+    <input type="radio" id="gato" name="tipo" value="gato">
+    <label for="gato">Gato</label>
   </div>
+</div>
   
   <div class="form-group">
-    <label for="raca">Raça:</label><br>
-    <select id="raca" name="raca" multiple>
-      <option value="poodle">Poodle</option>
-      <option value="labrador">Labrador</option>
-      <option value="siames">Siamês</option>
+    <label>Raça:</label><br>
+    <div class="checkbox-group" id="raca">
+      <input type="checkbox" id="poodle" name="raca" value="poodle">
+      <label for="poodle">Poodle</label>
+      <input type="checkbox" id="labrador" name="raca" value="labrador">
+      <label for="labrador">Labrador</label>
+      <input type="checkbox" id="siames" name="raca" value="siames">
+      <label for="siames">Siamês</label>
       <!-- Adicione mais opções de raça aqui -->
-    </select>
+    </div>
   </div>
   
   <div class="form-group">
-    <label for="porte">Porte: (Pequeno, Médio, Grande)</label><br>
-    <select id="porte" name="porte" multiple>
-      <option value="pequeno">Pequeno</option>
-      <option value="medio">Médio</option>
-      <option value="grande">Grande</option>
+    <label>Porte: (Pequeno, Médio, Grande)</label><br>
+    <div class="checkbox-group" id="porte">
+      <input type="checkbox" id="pequeno" name="porte" value="pequeno">
+      <label for="pequeno">Pequeno</label>
+      <input type="checkbox" id="medio" name="porte" value="medio">
+      <label for="medio">Médio</label>
+      <input type="checkbox" id="grande" name="porte" value="grande">
+      <label for="grande">Grande</label>
       <!-- Adicione mais opções de porte aqui -->
-    </select>
+    </div>
   </div>
+  
   
   <div class="form-group">
     <label for="cor">Cor:</label><br>
-    <select id="cor" name="cor" multiple>
-      <option value="preto">Preto</option>
-      <option value="branco">Branco</option>
-      <option value="marrom">Marrom</option>
-      <!-- Adicione mais opções de cor aqui -->
-    </select>
+    <div class="checkbox-group" id="cor">
+      <input type="checkbox" id="pequeno" name="porte" value="pequeno">
+      <label for="pequeno">Preto</label>
+      <input type="checkbox" id="medio" name="porte" value="medio">
+      <label for="medio">Branco</label>
+      <input type="checkbox" id="grande" name="porte" value="grande">
+      <label for="grande">Marrom</label>
+      <!-- Adicione mais opções de porte aqui -->
+    </div>
   </div>
   
   <div class="form-group">
-    <label for="genero">Gênero: (Macho ou Fêmea)</label><br>
-    <select id="genero" name="genero">
-      <option value="macho">Macho</option>
-      <option value="femea">Fêmea</option>
-    </select>
+  <label for="genero">Gênero: (Macho ou Fêmea)</label><br>
+  <div id="genero" class="checkbox-group">
+    <input type="radio" id="macho" name="genero" value="macho">
+    <label for="macho">Macho</label>
+    <br>
+    <input type="radio" id="femea" name="genero" value="femea">
+    <label for="femea">Fêmea</label>
   </div>
+</div>
   
-  <div class="form-group">
-    <label for="idade">Idade: (Filhote, Adulto, Idoso)</label><br>
-    <select id="idade" name="idade" multiple>
-      <option value="filhote">Filhote</option>
-      <option value="adulto">Adulto</option>
-      <option value="idoso">Idoso</option>
-      <!-- Adicione mais opções de idade aqui -->
-    </select>
+<div class="form-group">
+  <label for="idade">Idade: (Filhote, Adulto, Idoso)</label><br>
+  <div class="checkbox-group">
+    <input type="checkbox" id="filhote" name="idade" value="filhote">
+    <label for="filhote">Filhote</label>
+    <input type="checkbox" id="adulto" name="idade" value="adulto">
+    <label for="adulto">Adulto</label>
+    <input type="checkbox" id="idoso" name="idade" value="idoso">
+    <label for="idoso">Idoso</label>
   </div>
+</div>
   
   <div class="form-group">
     <label for="observacoes">Observações:</label><br>
-    <textarea id="observacoes" name="observacoes"></textarea>
+    <textarea id="observacoes" name="observacoes"  placeholder="Inclua informações adicionais aqui..."></textarea>
   </div>
   
   <button type="button" onclick="submitForm()">EncontreJá.Ai</button>

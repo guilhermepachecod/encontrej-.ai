@@ -1,14 +1,15 @@
   function submitForm() {
     // Obtém os dados do formulário
     var formData = {
-      especie: document.getElementById("tipo").value,
-      raca: Array.from(document.getElementById("raca").selectedOptions).map(option => option.value),
-      porte: Array.from(document.getElementById("porte").selectedOptions).map(option => option.value),
-      pelagem: Array.from(document.getElementById("cor").selectedOptions).map(option => option.value),
-      sexo: document.getElementById("genero").value,
-      faixa_etaria: Array.from(document.getElementById("idade").selectedOptions).map(option => option.value),
+      especie: document.querySelector('input[name="tipo"]:checked') ? document.querySelector('input[name="tipo"]:checked').value : "",
+      raca: Array.from(document.querySelectorAll('input[name="raca"]:checked')).map(option => option.value),
+      porte: Array.from(document.querySelectorAll('input[name="porte"]:checked')).map(option => option.value),
+      pelagem: Array.from(document.querySelectorAll('input[name="cor"]:checked')).map(option => option.value),
+      sexo: document.querySelector('input[name="genero"]:checked') ? document.querySelector('input[name="genero"]:checked').value : "",
+      faixa_etaria: Array.from(document.querySelectorAll('input[name="idade"]:checked')).map(option => option.value),
       observacoes: document.getElementById("observacoes").value
     };
+    
     
     console.log(formData);
     
@@ -39,7 +40,7 @@ function onloadPageUpdates() {
       fetchAPI().then(results => {
         populateSelectOptions("raca",results);
       });
-      fetchAPI().then(results => {
+      fetchFAKEAPI().then(results => {
         populateSelectOptions("cor",results);
       }).catch(error => {
         console.error("Erro ao carregar os dados da API:", error);
@@ -101,9 +102,28 @@ function fetchAPI() {
     // Neste exemplo, vamos simular uma resposta da API
 
     const fakeApiResponse = [
+      { id: 1, value: 'Labrador',  label: 'Labrador' },
+      { id: 2, value: 'Golden',  label: 'Golden' },
+      { id: 3, value: 'Bulldog',  label: 'Bulldog' },
+      { id: 4, value: 'Beagle',  label: 'Beagle' },
+      // Mais resultados...
+      // Retornar a resposta simulada da API
+    ];
+
+    return Promise.resolve(fakeApiResponse);
+  }
+  //EU CRIEI ESSA NOVA AQUI MAS È TEMPORARIA E DEVE SER REMOVIDA
+  function fetchFAKEAPI() {
+    // Aqui você fará a solicitação para a API, para carregar o select
+    // e receberá a resposta da API
+    // Neste exemplo, vamos simular uma resposta da API
+
+    const fakeApiResponse = [
       { id: 1, value: 'Branco',  label: 'Branco' },
       { id: 1, value: 'Preto',  label: 'Preto' },
       { id: 1, value: 'Marrom',  label: 'Marrom' },
+      { id: 1, value: 'Caramelo',  label: 'Branco' },
+      { id: 1, value: 'Amarelo',  label: 'Preto' },
       // Mais resultados...
       // Retornar a resposta simulada da API
     ];
@@ -217,15 +237,30 @@ function renderResultsUpdates(results) {
   });
 }
 function populateSelectOptions(selectId, data) {
-  const select = document.getElementById(selectId);
-  select.innerHTML = ""; // Limpa as opções existentes
+// Selecione o container dos checkboxes
+const checkboxGroup = document.getElementById(selectId);
+checkboxGroup.innerHTML = "";
+// Itere sobre os dados e crie os checkboxes
+data.forEach(option => {
+    // Crie o input do tipo checkbox
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.id = option.value;
+    checkbox.name = selectId;
+    checkbox.value = option.value;
 
-  data.forEach(option => {
-      const optionElement = document.createElement("option");
-      optionElement.value = option.value;
-      optionElement.textContent = option.label;
-      select.appendChild(optionElement);
-  });
+    // Crie a label para o checkbox
+    const label = document.createElement("label");
+    label.htmlFor = option.value;
+    label.textContent = option.label;
+
+    // Adicione o checkbox e a label ao container
+    checkboxGroup.appendChild(checkbox);
+    checkboxGroup.appendChild(label);
+
+    // Adicione uma quebra de linha para separar os checkboxes
+    checkboxGroup.appendChild(document.createElement("br"));
+});
 }
 function openModal(result) {
       // Criar o modal
