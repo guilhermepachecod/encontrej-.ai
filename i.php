@@ -18,7 +18,7 @@
         <h2 >EncontreJá.Ai</h2>
       </div>
       <div class="text-content">
-        <h1 >NÓS AJUDAMOS <br>VOCÊ A <br>ENCONTRAR SEU <br>PET PERDIDO <br>NAS ENCHENTES <br>DO RS</h1>
+        <h1 >NÓS AJUDAMOS <br>VOCÊ A <br>ENCONTRAR SEU <br><span class="bluehighlight">PET</span> PERDIDO <br>NAS ENCHENTES <br>DO RS</h1>
         <p class="subtitle">Com auxílio de inteligência artificial</p>
       </div>
 
@@ -31,7 +31,7 @@
         </div>
         <img src="cachorro.png" alt="Foto de um cachorro" class="dog-photo-phone">
         <div class="text-content-phone">
-        <h1 >NÓS AJUDAMOS <br>VOCÊ A <br>ENCONTRAR SEU <br>PET PERDIDO <br>NAS ENCHENTES <br>DO RS</h1>
+        <h1 >NÓS AJUDAMOS <br>VOCÊ A <br>ENCONTRAR SEU <br><span class="bluehighlight">PET</span> PERDIDO <br>NAS ENCHENTES <br>DO RS</h1>
         <p class="subtitle">Com auxílio de inteligência artificial</p>
       </div>
 
@@ -39,7 +39,7 @@
     </div>
     <div class="d-none d-sm-block">
     <div class="how-can-we-help black">
-      <h2>Como podemos ajudar você?</h2>
+      <h2>Como podemos ajudar <span class="bluehighlight">você?</span></h2>
       <div class="options">
         <div class="option">
         <a class="none" href="#selecao">
@@ -236,7 +236,7 @@
     <div class="latest-updates container">
     <div class="row">
     <div class="col-4">
-        <p class="text-xl-left">ÚLTIMAS<br> ATUALIZAÇÕES<br>
+        <p class="text-xl-left"><span class="bluehighlight">ÚLTIMAS<br> ATUALIZAÇÕES</span><br>
             VEJA QUEM<br> CHEGOU NO<br> NOSSO BANCO<br> DE DADOS</p>
     </div>
     <div class="col-8 lastupdates">
@@ -288,7 +288,7 @@
       </div>
       <div class="donations black">
         <div>
-            <p class="primary">OS ABRIGOS PRECISAM DE DOAÇÕES</p>
+            <p class="primary">OS ABRIGOS PRECISAM DE <span class="bluehighlight">DOAÇÕES</span></p>
             <p class="secondary">Ajude quem está resgatando e cuidando dos animais.</p>
         </div>
         <div class="d-none d-sm-block">

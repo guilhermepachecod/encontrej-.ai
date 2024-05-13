@@ -45,6 +45,7 @@ body {
       width: 100%;
     }
     .text-content {
+    text-align: left;
     font-family:'antonio';
     margin-left: 5%;
     font-size: 30px;
@@ -91,7 +92,9 @@ body {
         margin-left: 5px;
         margin-top: 0; /* Remove a margem superior do título */
       }
-
+.bluehighlight{
+  color: #93A9FF;
+}
   .title {
     max-width: 50%;
     margin-top: 25%;
