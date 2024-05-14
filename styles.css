@@ -507,7 +507,7 @@ body {
 
 .modal-card-img {
   
-  width: 100%; /* Ajuste conforme necessário */
+  width: 200px; /* Ajuste conforme necessário */
   height: auto; /* Ajuste conforme necessário */
   margin-right: 20px;
 }
