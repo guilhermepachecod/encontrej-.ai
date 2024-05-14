@@ -99,7 +99,7 @@
         </div>
         <p class="instruction">Escolha uma foto nítida que seu pet esteja em<br> destaque e com boa resolução.</p>
         <!-- <button onclick="uploadImage()">EncontreJá.Ai</button> -->
-        <img id='imgPreview'/>
+        <img id='imgPreview' onclick="openFilePicker()"/>
       </div>
       
     <div id="selecao" class="characteristics white">
