@@ -9,8 +9,9 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body onload="onloadPageUpdates()">
-<script src="script.js"></script>
-<script src="utils.js"></script>
+<script src="scripts/script.js"></script>
+<script src="scripts/utils.js"></script>
+<script src="scripts/apiCalls.js"></script>
   <div class="d-none d-sm-block">
     <div class="header black container">
       <img src="cachorro.png" alt="Foto de um cachorro" class="dog-photo">

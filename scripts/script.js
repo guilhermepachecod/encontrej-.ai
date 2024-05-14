@@ -1,26 +1,24 @@
-  function submitForm() {
-    // Obtém os dados do formulário
-    var formData = {
-      especie: document.querySelector('input[name="tipo"]:checked') ? document.querySelector('input[name="tipo"]:checked').value : "",
-      raca: Array.from(document.querySelectorAll('input[name="raca"]:checked')).map(option => option.value),
-      porte: Array.from(document.querySelectorAll('input[name="porte"]:checked')).map(option => option.value),
-      pelagem: Array.from(document.querySelectorAll('input[name="cor"]:checked')).map(option => option.value),
-      sexo: document.querySelector('input[name="genero"]:checked') ? document.querySelector('input[name="genero"]:checked').value : "",
-      faixa_etaria: Array.from(document.querySelectorAll('input[name="idade"]:checked')).map(option => option.value),
-      observacoes: document.getElementById("observacoes").value
-    };
-    
-    
-    console.log(formData);
-    
-    searchAPI(formData).then(results => {
-      renderResults(results);
-    });
-    // Aqui você pode adicionar código para enviar os dados para o Forms do Google ou outro destino desejado
-  }
-  function openFilePicker() {
-    document.getElementById('fileInput').click();
+function submitForm() {
+  // Obtém os dados do formulário
+  var formData = validatePet({
+    type: document.querySelector('input[name="tipo"]:checked') ? document.querySelector('input[name="tipo"]:checked').value : "",
+    breed: Array.from(document.querySelectorAll('input[name="raca"]:checked')).map(option => option.value),
+    size: Array.from(document.querySelectorAll('input[name="porte"]:checked')).map(option => option.value),
+    color: Array.from(document.querySelectorAll('input[name="cor"]:checked')).map(option => option.value),
+    gender: document.querySelector('input[name="genero"]:checked') ? document.querySelector('input[name="genero"]:checked').value : "",
+    age: Array.from(document.querySelectorAll('input[name="idade"]:checked')).map(option => option.value),
+    observations: document.getElementById("observacoes").value
+  });
+
+  searchPets(formData)
+    .then(results => renderResults(results))
+    .catch(error => console.error("Erro ao buscar os pets:", error));
 }
+  
+function openFilePicker() {
+  document.getElementById('fileInput').click();
+}
+
 function uploadImage() {
   var fileInput = document.getElementById('fileInput');
   var file = fileInput.files[0];
@@ -32,6 +30,7 @@ function uploadImage() {
       });
   }
 }
+
 function onloadPageUpdates() {
       // Aqui você pode processar o arquivo selecionado
       loadAPIUpdates().then(results => {
@@ -176,14 +175,14 @@ function renderResults(results) {
       card.classList.add('center');
       // Criar a imagem
       const image = document.createElement('img');
-      image.src = result.imageUrl;
-      image.alt = result.title;
+      image.src = result.imgUrl;
+      image.alt = result.type;
       image.classList.add('card-img-top-result');
       card.appendChild(image);
 
       // Criar o título
       const title = document.createElement('h5');
-      title.textContent = result.title;
+      title.textContent = result.location;
       title.classList.add('card-text');
       title.classList.add('card-text-result');
       title.classList.add('white');
@@ -191,7 +190,7 @@ function renderResults(results) {
 
       // Criar a descrição
       const description = document.createElement('p');
-      description.textContent = result.description;
+      description.textContent = result.observations;
       description.classList.add('card-text');
       description.classList.add('card-text-result');
       //card.appendChild(description);
@@ -222,7 +221,7 @@ function renderResultsUpdates(results) {
     
     // Criar a imagem
     const image = document.createElement('img');
-    image.src = result.imageUrl;
+    image.src = result.imgUrl;
     image.alt = result.title;
     image.classList.add('card-img-top');
     card.appendChild(image);
@@ -273,10 +272,10 @@ function openModal(result) {
           <button class="modal-close-btn" onclick="closeModal()">X</button>
           </div>
               <div class="modal-card">
-                  <img src="${result.imageUrl}" alt="${result.title}" class="modal-card-img">
+                  <img src="${result.imgUrl}" alt="${result.title}" class="modal-card-img">
                   <div class="modal-card-info">
                       <h5 class="modal-card-title">${result.title}</h5>
-                      <p class="modal-card-description">${result.description}</p>
+                      <p class="modal-card-description">${result.observations}</p>
                   </div>
               </div>
           </div>
