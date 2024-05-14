@@ -10,7 +10,7 @@ function submitForm() {
     observations: document.getElementById("observacoes").value
   });
 
-  searchPets(formData)
+  getPets(formData)
     .then(results => renderResults(results))
     .catch(error => console.error("Erro ao buscar os pets:", error));
 }
@@ -36,10 +36,10 @@ function onloadPageUpdates() {
       loadAPIUpdates().then(results => {
         renderResultsUpdates(results);
       });
-      fetchAPI().then(results => {
+      getCategoryValues('raca').then(results => {
         populateSelectOptions("raca",results);
       });
-      fetchFAKEAPI().then(results => {
+      getCategoryValues('cor').then(results => {
         populateSelectOptions("cor",results);
       }).catch(error => {
         console.error("Erro ao carregar os dados da API:", error);
@@ -244,14 +244,14 @@ data.forEach(option => {
     // Crie o input do tipo checkbox
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    checkbox.id = option.value;
+    checkbox.id = option;
     checkbox.name = selectId;
-    checkbox.value = option.value;
+    checkbox.value = option;
 
     // Crie a label para o checkbox
     const label = document.createElement("label");
-    label.htmlFor = option.value;
-    label.textContent = option.label;
+    label.htmlFor = option;
+    label.textContent = option;
 
     // Adicione o checkbox e a label ao container
     checkboxGroup.appendChild(checkbox);
