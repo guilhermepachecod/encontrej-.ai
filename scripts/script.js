@@ -299,5 +299,8 @@ function renderImage() {
   fr.onload = function (e) {
     var img = document.getElementById('imgPreview')
     img.src = e.target.result
+
+    var btn = document.getElementById('chooseFileButton')
+    btn.style.display = 'none'
   }
 }
