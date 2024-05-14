@@ -346,13 +346,13 @@ function submitValueToForms({type, breeds, size, colors, age, observations}) {
     }
   });
 
-  size.forEach(size => {
-      try{
-        document.querySelector(`input[name="porte"][id="${size}"]`).checked = true;
-      } catch (e) {
-        console.log('Size not found:', size)
-      }
-  });
+  // size.forEach(size => {
+  //     try{
+  //       document.querySelector(`input[name="porte"][id="${size}"]`).checked = true;
+  //     } catch (e) {
+  //       console.log('Size not found:', size)
+  //     }
+  // });
 
   colors.forEach(color => {
     try{
@@ -370,5 +370,5 @@ function submitValueToForms({type, breeds, size, colors, age, observations}) {
     }
   });
 
-  document.getElementById('observacoes').value = observations;
+  // document.getElementById('observacoes').value = observations;
 }

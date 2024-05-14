@@ -128,7 +128,7 @@
     </div>
   </div>
   
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label>Porte: (Pequeno, Médio, Grande)</label><br>
     <div class="checkbox-group" id="porte">
       <input type="checkbox" id="mini" name="porte" value="mini">
@@ -142,8 +142,8 @@
       <input type="checkbox" id="gigante" name="porte" value="gigante">
       <label for="gigante">Gigante</label>
       <!-- Adicione mais opções de porte aqui -->
-    </div>
-  </div>
+    <!-- </div> -->
+    <!-- </div> -->
   
   
   <div class="form-group">
