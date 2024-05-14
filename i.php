@@ -277,20 +277,28 @@
     </div>
   </div>
   <div class="parceiros black">
-    <h2 class="primary-parceiros">Redes e parceiros</h2>
+    <h2 class="primary-parceiros">REDES QUE INSPIRAM</h2>
     <h2 class="terciary-parceiros">Conheça os heróis que estão salvando <br>e cuidando dos animais resgatados.</h2>
     <div class="container container-parceiros">
       <div class="image-container">
+        <a href="https://www.instagram.com/meubichotasalvocanoas/"  target="_blank">
         <img src="imagem1.jpeg" alt="Imagem 1">
+        </a>
       </div>
       <div class="image-container">
+      <a href="https://www.instagram.com/protetoraluisewerner/?hl=pt-br"  target="_blank">
         <img src="imagem2.jpeg" alt="Imagem 2">
+        </a>
       </div>
       <div class="image-container">
+      <a href="https://linktr.ee/gradbrasil"  target="_blank">
         <img src="imagem3.jpeg" alt="Imagem 3">
+        </a>
       </div>
       <div class="image-container">
+      <a href="https://www.instagram.com/deisefalci/"  target="_blank">
         <img src="imagem4.jpeg" alt="Imagem 4">
+        </a>
       </div>
     </div>
 
