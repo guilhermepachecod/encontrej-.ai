@@ -14,7 +14,7 @@ function submitForm() {
     .then(results => renderResults(results))
     .catch(error => console.error("Erro ao buscar os pets:", error));
 }
-  
+
 function openFilePicker() {
   document.getElementById('fileInput').click();
 }
@@ -23,29 +23,29 @@ function uploadImage() {
   var fileInput = document.getElementById('fileInput');
   var file = fileInput.files[0];
   if (file) {
-      // Aqui você pode processar o arquivo selecionado
-      console.log('Arquivo selecionado:', file);
-      searchAPIimage(file).then(results => {
-        renderResults(results);
-      });
+    // Aqui você pode processar o arquivo selecionado
+    console.log('Arquivo selecionado:', file);
+    searchAPIimage(file).then(results => {
+      renderResults(results);
+    });
   }
 }
 
 function onloadPageUpdates() {
-      // Aqui você pode processar o arquivo selecionado
-      loadAPIUpdates().then(results => {
-        renderResultsUpdates(results);
-      });
-      getCategoryValues('raca').then(results => {
-        populateSelectOptions("raca",results);
-      });
-      getCategoryValues('cor').then(results => {
-        populateSelectOptions("cor",results);
-      }).catch(error => {
-        console.error("Erro ao carregar os dados da API:", error);
-      });
+  // Aqui você pode processar o arquivo selecionado
+  loadAPIUpdates().then(results => {
+    renderResultsUpdates(results);
+  });
+  getCategoryValues('raca').then(results => {
+    populateSelectOptions("raca", results);
+  });
+  getCategoryValues('cor').then(results => {
+    populateSelectOptions("cor", results);
+  }).catch(error => {
+    console.error("Erro ao carregar os dados da API:", error);
+  });
 }
-  // Função para buscar na API fictícia
+// Função para buscar na API fictícia
 function searchAPI(formData) {
   // Aqui você fará a solicitação para a API, enviando os dados do formulário
   // e receberá a resposta da API
@@ -56,7 +56,7 @@ function searchAPI(formData) {
     { id: 3, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 3', description: 'Descrição do Pet 3' },
     { id: 4, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 4' },
     // Mais resultados...
-];
+  ];
   // Retornar a resposta simulada da API
   return Promise.resolve(fakeApiResponse);
 }
@@ -65,11 +65,11 @@ function searchAPIimage(file) {
   // e receberá a resposta da API
   // Neste exemplo, vamos simular uma resposta da API
   const fakeApiResponse = [
-      { id: 1, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 1' },
-      { id: 2, imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsegredosdomundo.r7.com%2Fwp-content%2Fuploads%2F2019%2F07%2Fdescubra-agora-5-cuidados-que-se-deve-ter-com-os-filhotes-de-cachorro-2.jpg&f=1&nofb=1&ipt=931ce249445b42cf1f2c779963d6ada5a875345f46dabd00639057909e0b0f3b&ipo=images', title: 'Pet 2', description: 'Descrição do Pet 2' },
-      { id: 3, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 3', description: 'Descrição do Pet 3' },
-      { id: 4, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 4' },
-      // Mais resultados...
+    { id: 1, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 1' },
+    { id: 2, imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsegredosdomundo.r7.com%2Fwp-content%2Fuploads%2F2019%2F07%2Fdescubra-agora-5-cuidados-que-se-deve-ter-com-os-filhotes-de-cachorro-2.jpg&f=1&nofb=1&ipt=931ce249445b42cf1f2c779963d6ada5a875345f46dabd00639057909e0b0f3b&ipo=images', title: 'Pet 2', description: 'Descrição do Pet 2' },
+    { id: 3, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 3', description: 'Descrição do Pet 3' },
+    { id: 4, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 4' },
+    // Mais resultados...
   ];
   // Retornar a resposta simulada da API
   return Promise.resolve(fakeApiResponse);
@@ -81,54 +81,54 @@ function loadAPIUpdates() {
   // O máximo de itens aqui não pode passar de 8
   //pares ajustam melhor
   const fakeApiResponse = [
-      { id: 1, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 1' },
-      { id: 2, imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsegredosdomundo.r7.com%2Fwp-content%2Fuploads%2F2019%2F07%2Fdescubra-agora-5-cuidados-que-se-deve-ter-com-os-filhotes-de-cachorro-2.jpg&f=1&nofb=1&ipt=931ce249445b42cf1f2c779963d6ada5a875345f46dabd00639057909e0b0f3b&ipo=images', title: 'Pet 2', description: 'Descrição do Pet 2' },
-      { id: 3, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 3', description: 'Descrição do Pet 3' },
-      { id: 4, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 4' },
-      { id: 1, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 1' },
-      { id: 2, imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsegredosdomundo.r7.com%2Fwp-content%2Fuploads%2F2019%2F07%2Fdescubra-agora-5-cuidados-que-se-deve-ter-com-os-filhotes-de-cachorro-2.jpg&f=1&nofb=1&ipt=931ce249445b42cf1f2c779963d6ada5a875345f46dabd00639057909e0b0f3b&ipo=images', title: 'Pet 2', description: 'Descrição do Pet 2' },
-      { id: 3, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 3', description: 'Descrição do Pet 3' },
-      { id: 4, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 4' },
-      // Mais resultados...
+    { id: 1, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 1' },
+    { id: 2, imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsegredosdomundo.r7.com%2Fwp-content%2Fuploads%2F2019%2F07%2Fdescubra-agora-5-cuidados-que-se-deve-ter-com-os-filhotes-de-cachorro-2.jpg&f=1&nofb=1&ipt=931ce249445b42cf1f2c779963d6ada5a875345f46dabd00639057909e0b0f3b&ipo=images', title: 'Pet 2', description: 'Descrição do Pet 2' },
+    { id: 3, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 3', description: 'Descrição do Pet 3' },
+    { id: 4, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 4' },
+    { id: 1, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 1' },
+    { id: 2, imageUrl: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fsegredosdomundo.r7.com%2Fwp-content%2Fuploads%2F2019%2F07%2Fdescubra-agora-5-cuidados-que-se-deve-ter-com-os-filhotes-de-cachorro-2.jpg&f=1&nofb=1&ipt=931ce249445b42cf1f2c779963d6ada5a875345f46dabd00639057909e0b0f3b&ipo=images', title: 'Pet 2', description: 'Descrição do Pet 2' },
+    { id: 3, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 3', description: 'Descrição do Pet 3' },
+    { id: 4, imageUrl: 'https://www.mundoecologia.com.br/wp-content/uploads/2019/05/Foto-de-Cachorro-6.jpg', title: 'Pet 1', description: 'Descrição do Pet 4' },
+    // Mais resultados...
   ];
   // Retornar a resposta simulada da API
   return Promise.resolve(fakeApiResponse);
 }
-  // Função para buscar na API fictícia
+// Função para buscar na API fictícia
 function fetchAPI() {
-    // Aqui você fará a solicitação para a API, para carregar o select
-    // e receberá a resposta da API
-    // Neste exemplo, vamos simular uma resposta da API
+  // Aqui você fará a solicitação para a API, para carregar o select
+  // e receberá a resposta da API
+  // Neste exemplo, vamos simular uma resposta da API
 
-    const fakeApiResponse = [
-      { id: 1, value: 'Labrador',  label: 'Labrador' },
-      { id: 2, value: 'Golden',  label: 'Golden' },
-      { id: 3, value: 'Bulldog',  label: 'Bulldog' },
-      { id: 4, value: 'Beagle',  label: 'Beagle' },
-      // Mais resultados...
-      // Retornar a resposta simulada da API
-    ];
+  const fakeApiResponse = [
+    { id: 1, value: 'Labrador', label: 'Labrador' },
+    { id: 2, value: 'Golden', label: 'Golden' },
+    { id: 3, value: 'Bulldog', label: 'Bulldog' },
+    { id: 4, value: 'Beagle', label: 'Beagle' },
+    // Mais resultados...
+    // Retornar a resposta simulada da API
+  ];
 
-    return Promise.resolve(fakeApiResponse);
-  }
-  //EU CRIEI ESSA NOVA AQUI MAS È TEMPORARIA E DEVE SER REMOVIDA
-  function fetchFAKEAPI() {
-    // Aqui você fará a solicitação para a API, para carregar o select
-    // e receberá a resposta da API
-    // Neste exemplo, vamos simular uma resposta da API
+  return Promise.resolve(fakeApiResponse);
+}
+//EU CRIEI ESSA NOVA AQUI MAS È TEMPORARIA E DEVE SER REMOVIDA
+function fetchFAKEAPI() {
+  // Aqui você fará a solicitação para a API, para carregar o select
+  // e receberá a resposta da API
+  // Neste exemplo, vamos simular uma resposta da API
 
-    const fakeApiResponse = [
-      { id: 1, value: 'Branco',  label: 'Branco' },
-      { id: 1, value: 'Preto',  label: 'Preto' },
-      { id: 1, value: 'Marrom',  label: 'Marrom' },
-      { id: 1, value: 'Caramelo',  label: 'Branco' },
-      { id: 1, value: 'Amarelo',  label: 'Preto' },
-      // Mais resultados...
-      // Retornar a resposta simulada da API
-    ];
+  const fakeApiResponse = [
+    { id: 1, value: 'Branco', label: 'Branco' },
+    { id: 1, value: 'Preto', label: 'Preto' },
+    { id: 1, value: 'Marrom', label: 'Marrom' },
+    { id: 1, value: 'Caramelo', label: 'Branco' },
+    { id: 1, value: 'Amarelo', label: 'Preto' },
+    // Mais resultados...
+    // Retornar a resposta simulada da API
+  ];
 
-    return Promise.resolve(fakeApiResponse);
-  }
+  return Promise.resolve(fakeApiResponse);
+}
 
 function renderResults(results) {
   const resultsContainer = document.getElementById('results-container');
@@ -139,7 +139,7 @@ function renderResults(results) {
     // Se não houver resultados, exibe uma mensagem de aviso
     const statusresultado = document.getElementById('statusresultado');
     statusresultado.innerHTML = 'Não encontramos <br>resultados para a sua <br>pesquisa.';
-    
+
     const noResultsDIV = document.createElement('div');
     const noResultsMessageA = document.createElement('p');
     noResultsMessageA.textContent = 'Isso pode ocorrer por alguns fatores:';
@@ -159,11 +159,11 @@ function renderResults(results) {
     noResultsDIV.appendChild(document.createElement('br'));
     const noResultsButton = document.createElement('button');
     noResultsButton.textContent = 'REFAZER BUSCA';
-    noResultsButton.addEventListener('click', function() {
+    noResultsButton.addEventListener('click', function () {
       document.getElementById('selecao').scrollIntoView({ behavior: 'smooth' });
-  });
+    });
     noResultsDIV.appendChild(noResultsButton);
-    
+
     noResultsDIV.classList.add('diverro');
     resultsContainer.appendChild(noResultsDIV);
   } else {
@@ -218,7 +218,7 @@ function renderResultsUpdates(results) {
     // Criar um card para cada resultado
     const card = document.createElement('div');
     card.classList.add('card-updates');
-    
+
     // Criar a imagem
     const image = document.createElement('img');
     image.src = result.imgUrl;
@@ -236,11 +236,11 @@ function renderResultsUpdates(results) {
   });
 }
 function populateSelectOptions(selectId, data) {
-// Selecione o container dos checkboxes
-const checkboxGroup = document.getElementById(selectId);
-checkboxGroup.innerHTML = "";
-// Itere sobre os dados e crie os checkboxes
-data.forEach(option => {
+  // Selecione o container dos checkboxes
+  const checkboxGroup = document.getElementById(selectId);
+  checkboxGroup.innerHTML = "";
+  // Itere sobre os dados e crie os checkboxes
+  data.forEach(option => {
     // Crie o input do tipo checkbox
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
@@ -259,13 +259,13 @@ data.forEach(option => {
 
     // Adicione uma quebra de linha para separar os checkboxes
     checkboxGroup.appendChild(document.createElement("br"));
-});
+  });
 }
 function openModal(result) {
-      // Criar o modal
-      const modal = document.createElement('div');
-      modal.classList.add('modal');
-      modal.innerHTML = `
+  // Criar o modal
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+  modal.innerHTML = `
           <div class="modal-overlay"></div>
           <div class="modal-content">
           <div class="modal-header">
@@ -280,14 +280,24 @@ function openModal(result) {
               </div>
           </div>
       `;
-      
-      // Adicionar o modal ao corpo da página
-      document.body.appendChild(modal);
+
+  // Adicionar o modal ao corpo da página
+  document.body.appendChild(modal);
 }
 // Função para fechar o modal
 function closeModal() {
   const modal = document.querySelector('.modal');
   if (modal) {
-      modal.remove();
+    modal.remove();
+  }
+}
+
+function renderImage() {
+  var file = document.getElementById('fileInput').files[0]
+  var fr = new FileReader()
+  fr.readAsDataURL(file)
+  fr.onload = function (e) {
+    var img = document.getElementById('imgPreview')
+    img.src = e.target.result
   }
 }

@@ -93,12 +93,13 @@
     </div>
     </div>
       <div class="upload-container white">
-      <input type="file" id="fileInput" style="display: none;" accept="image/*">
+      <input type="file" id="fileInput" style="display: none;" accept="image/*" onchange="renderImage()">
         <div id="chooseFileButton" class="upload-box" onclick="openFilePicker()">
           <p>Clique aqui para anexar a <br>foto do seu pet</p>
         </div>
         <p class="instruction">Escolha uma foto nítida que seu pet esteja em<br> destaque e com boa resolução.</p>
-        <button onclick="uploadImage()">EncontreJá.Ai</button>
+        <!-- <button onclick="uploadImage()">EncontreJá.Ai</button> -->
+        <img id='imgPreview'/>
       </div>
       
     <div id="selecao" class="characteristics white">
