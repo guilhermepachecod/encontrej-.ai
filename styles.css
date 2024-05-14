@@ -253,7 +253,8 @@ body {
     padding-bottom: 15%;
   }
   .card-result{
-
+    width: 250px;
+    padding: 10px;
     height: 100%;
     margin: 10px;
   }
@@ -507,8 +508,8 @@ body {
 
 .modal-card-img {
   
-  width: 200px; /* Ajuste conforme necessário */
-  height: auto; /* Ajuste conforme necessário */
+  width: 400px; /* Ajuste conforme necessário */
+  height: 400px; /* Ajuste conforme necessário */
   margin-right: 20px;
 }
 
