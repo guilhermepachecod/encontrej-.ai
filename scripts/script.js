@@ -245,7 +245,7 @@ function populateSelectOptions(selectId, data) {
     const divcheckbox = document.createElement("div");
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
-    checkbox.id = option;
+    checkbox.id = option.toLowerCase();
     checkbox.name = selectId;
     checkbox.value = option;
 
@@ -306,7 +306,8 @@ function renderImage() {
     // com a URL manda para o backend pegar infos com a IA
     let base64 = e.target.result.split(',')[1]
     let imgUrl = await submitToImgBB(base64);
-    
+    let infos = await extractImageInfos(imgUrl)
+    submitValueToForms(infos)
   }
 }
 
@@ -315,16 +316,16 @@ async function submitToImgBB(img) {
 
   let form = new FormData()
   let apiKey = '2e777b441cd2680c9ca66360fb8ab8e6'
-  
+
   form.append('image', img)
   form.append('key', apiKey)
-  
+
   let res = await fetch(url, {
     method: 'POST',
     body: form
   })
 
-  if(!res.ok) {
+  if (!res.ok) {
     console.error('Erro ao enviar imagem para o imgBB')
     console.error(res)
     return
@@ -332,4 +333,42 @@ async function submitToImgBB(img) {
 
   let data = await res.json()
   return data.data.image.url
+}
+
+
+function submitValueToForms({type, breeds, size, colors, age, observations}) {
+  document.querySelector(`input[name="tipo"][value="${type}"]`).checked = true;
+  breeds.forEach(breed => {
+    try{
+      document.querySelector(`input[name="raca"][id="${breed}"]`).checked = true;
+    } catch (e) {
+      console.log('Breed not found:', breed)
+    }
+  });
+
+  size.forEach(size => {
+      try{
+        document.querySelector(`input[name="porte"][id="${size}"]`).checked = true;
+      } catch (e) {
+        console.log('Size not found:', size)
+      }
+  });
+
+  colors.forEach(color => {
+    try{
+      document.querySelector(`input[name="cor"][id="${color}"]`).checked = true;
+    } catch (e) {
+      console.log('Color not found:', color)
+    }
+  });
+
+  age.forEach(age => {
+    try{
+      document.querySelector(`input[name="idade"][id="${age}"]`).checked = true;
+    } catch (e) {
+      console.log('Age not found:', age)
+    }
+  });
+
+  document.getElementById('observacoes').value = observations;
 }

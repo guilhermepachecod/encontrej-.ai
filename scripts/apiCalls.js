@@ -1,5 +1,5 @@
-// const url = "https://encontreja-ai.vercel.app/api"
-const url = "localhost:3000/api"
+const url = "https://encontreja-ai.vercel.app/api"
+// const url = "http://localhost:3000/api"
 
 async function getPets(form) {
    let fullUrl = `${url}/pet?${queryString(form)}`;
