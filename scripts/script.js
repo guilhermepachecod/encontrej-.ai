@@ -99,7 +99,6 @@ function fetchAPI() {
   // Aqui você fará a solicitação para a API, para carregar o select
   // e receberá a resposta da API
   // Neste exemplo, vamos simular uma resposta da API
-
   const fakeApiResponse = [
     { id: 1, value: 'Labrador', label: 'Labrador' },
     { id: 2, value: 'Golden', label: 'Golden' },
@@ -109,6 +108,7 @@ function fetchAPI() {
     // Retornar a resposta simulada da API
   ];
 
+  console.log(fakeApiResponse)
   return Promise.resolve(fakeApiResponse);
 }
 //EU CRIEI ESSA NOVA AQUI MAS È TEMPORARIA E DEVE SER REMOVIDA
@@ -296,11 +296,41 @@ function renderImage() {
   var file = document.getElementById('fileInput').files[0]
   var fr = new FileReader()
   fr.readAsDataURL(file)
-  fr.onload = function (e) {
+  fr.onload = async function (e) {
     var img = document.getElementById('imgPreview')
     img.src = e.target.result
 
     var btn = document.getElementById('chooseFileButton')
     btn.style.display = 'none'
+
+    // Sobe imagem para o imgBB para gerar URL
+    // com a URL manda para o backend pegar infos com a IA
+    let base64 = e.target.result.split(',')[1]
+    let imgUrl = await submitToImgBB(base64);
+    
   }
+}
+
+async function submitToImgBB(img) {
+  let url = 'https://api.imgbb.com/1/upload'
+
+  let form = new FormData()
+  let apiKey = '2e777b441cd2680c9ca66360fb8ab8e6'
+  
+  form.append('image', img)
+  form.append('key', apiKey)
+  
+  let res = await fetch(url, {
+    method: 'POST',
+    body: form
+  })
+
+  if(!res.ok) {
+    console.error('Erro ao enviar imagem para o imgBB')
+    console.error(res)
+    return
+  }
+
+  let data = await res.json()
+  return data.data.image.url
 }
