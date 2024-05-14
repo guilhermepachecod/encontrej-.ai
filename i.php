@@ -115,9 +115,9 @@
   </div>
 </div>
   
-  <div class="form-group">
+  <div class="form-group container">
     <label>Raça:</label><br>
-    <div class="checkbox-group" id="raca">
+    <div class="checkbox-group-raca container" id="raca">
       <input type="checkbox" id="poodle" name="raca" value="poodle">
       <label for="poodle">Poodle</label>
       <input type="checkbox" id="labrador" name="raca" value="labrador">
