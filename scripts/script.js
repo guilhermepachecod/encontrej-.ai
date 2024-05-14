@@ -242,6 +242,7 @@ function populateSelectOptions(selectId, data) {
   // Itere sobre os dados e crie os checkboxes
   data.forEach(option => {
     // Crie o input do tipo checkbox
+    const divcheckbox = document.createElement("div");
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.id = option;
@@ -254,11 +255,9 @@ function populateSelectOptions(selectId, data) {
     label.textContent = option;
 
     // Adicione o checkbox e a label ao container
-    checkboxGroup.appendChild(checkbox);
-    checkboxGroup.appendChild(label);
-
-    // Adicione uma quebra de linha para separar os checkboxes
-    checkboxGroup.appendChild(document.createElement("br"));
+    divcheckbox.appendChild(checkbox);
+    divcheckbox.appendChild(label);
+    checkboxGroup.appendChild(divcheckbox);
   });
 }
 function openModal(result) {
