@@ -292,22 +292,22 @@ function closeModal() {
 }
 
 function renderImage() {
-  var file = document.getElementById('fileInput').files[0]
-  var fr = new FileReader()
-  fr.readAsDataURL(file)
-  fr.onload = async function (e) {
-    var img = document.getElementById('imgPreview')
-    img.src = e.target.result
+  var file = document.getElementById('fileInput').files[0];
+  var fr = new FileReader();
+  
+  // Mostrar indicador de carregamento
+  document.getElementById('loadingIndicator').style.display = 'block';
 
-    var btn = document.getElementById('chooseFileButton')
-    btn.style.display = 'none'
+  fr.readAsDataURL(file);
+  fr.onload = function (e) {
+    var img = document.getElementById('imgPreview');
+    img.src = e.target.result;
 
-    // Sobe imagem para o imgBB para gerar URL
-    // com a URL manda para o backend pegar infos com a IA
-    let base64 = e.target.result.split(',')[1]
-    let imgUrl = await submitToImgBB(base64);
-    let infos = await extractImageInfos(imgUrl)
-    submitValueToForms(infos)
+    var btn = document.getElementById('chooseFileButton');
+    btn.style.display = 'none';
+    
+    // Esconder indicador de carregamento após a imagem ser carregada
+    document.getElementById('loadingIndicator').style.display = 'none';
   }
 }
 
