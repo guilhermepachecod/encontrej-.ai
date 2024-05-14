@@ -214,21 +214,21 @@
             </div>
           </div> -->
           </div>
-          <button class="option">
+          <a class="option" target="_blank" href="https://forms.gle/72HxdmXJQRq6yNiQ9">
             <div class="cardcad" style="width: 18rem;">
               <div class="cardcad-body">
                 <h5 class="cardcad-title">Registrar cachorro</h5>
               </div>
             </div>
-          </button>
-          <button class="option">
+          </a>
+          <a class="option" target="_blank" href="https://forms.gle/pd8FEkHCvVjKestt7">
             <div class="cardcad" style="width: 18rem; height: 12rem;">
               <div class="cardcad-body">
                 <h5 class="cardcad-title">Registrar gato</h5>
                 </p>
               </div>
             </div>
-          </button>
+          </a>
         </div>
         <!-- <button onclick="registerPet()" class="cadastro">Cadastrar CACHORRO</button> -->
         <!-- <button onclick="finishRegistration()" class="cadastro">Cadastrar GATO</button> -->

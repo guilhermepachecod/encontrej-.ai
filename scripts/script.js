@@ -299,13 +299,20 @@ function renderImage() {
   document.getElementById('loadingIndicator').style.display = 'block';
 
   fr.readAsDataURL(file);
-  fr.onload = function (e) {
+  fr.onload = async function (e) {
     var img = document.getElementById('imgPreview');
     img.src = e.target.result;
 
     var btn = document.getElementById('chooseFileButton');
     btn.style.display = 'none';
     
+    // Sobe imagem para o imgBB para gerar URL
+    // com a URL manda para o backend pegar infos com a IA
+    let base64 = e.target.result.split(',')[1]
+    let imgUrl = await submitToImgBB(base64);
+    let infos = await extractImageInfos(imgUrl)
+    submitValueToForms(infos)
+
     // Esconder indicador de carregamento após a imagem ser carregada
     document.getElementById('loadingIndicator').style.display = 'none';
   }
