@@ -15,7 +15,7 @@
   <script src="scripts/utils.js"></script>
   <script src="scripts/apiCalls.js"></script>
   <div class="d-none d-sm-block">
-    <div class="header black container">
+    <div class="header black">
       <img src="cachorro.png" alt="Foto de um cachorro" class="dog-photo">
       <div class="texto-flutuante">
         <h2>EncontreJá.Ai</h2>
