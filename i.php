@@ -97,6 +97,7 @@
     </div>
   </div>
   <div class="upload-container white">
+  <div id="loadingIndicator" class="loading-indicator"></div>
     <input type="file" id="fileInput" style="display: none;" accept="image/*" onchange="renderImage()">
     <div id="chooseFileButton" class="upload-box" onclick="openFilePicker()">
       <p>Clique aqui para anexar a <br>foto do seu pet</p>
@@ -280,16 +281,16 @@
     <h2 class="terciary-parceiros">Conheça os heróis que estão salvando <br>e cuidando dos animais resgatados.</h2>
     <div class="container container-parceiros">
       <div class="image-container">
-        <img src="imagem1.png" alt="Imagem 1">
+        <img src="imagem1.jpeg" alt="Imagem 1">
       </div>
       <div class="image-container">
-        <img src="imagem2.png" alt="Imagem 2">
+        <img src="imagem2.jpeg" alt="Imagem 2">
       </div>
       <div class="image-container">
-        <img src="imagem3.png" alt="Imagem 3">
+        <img src="imagem3.jpeg" alt="Imagem 3">
       </div>
       <div class="image-container">
-        <img src="imagem4.png" alt="Imagem 4">
+        <img src="imagem4.jpeg" alt="Imagem 4">
       </div>
     </div>
 
