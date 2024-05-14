@@ -651,8 +651,20 @@ img {
   display: flex;
   justify-content: center;
 }
+.checkbox-group-raca {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-weight: normal;
+}
+#raca{
+  width: 720px;
+}
 .checkbox-group {
   font-weight: normal;
+}
+.checkbox-group-raca input[type="checkbox"] {
+  margin: -5px 5px 5px 5px;
 }
 .checkbox-group input[type="checkbox"] {
   margin: -5px 5px 5px 5px;
