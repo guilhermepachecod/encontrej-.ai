@@ -199,11 +199,11 @@
   </div>
   <div id="results" class="results-container white container text-justify">
     <h3 id="statusresultado">RESULTADOS ENCONTRADOS</h3>
-
-    <div id="results-container" class="row justify-content-center">
     <div id="results-loadingIndicator" class="spinner-border" role="status">
       <span class="sr-only">Loading...</span>
     </div>
+    <div id="results-container" class="row justify-content-center">
+
     </div>
     
   </div>
