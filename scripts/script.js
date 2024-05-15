@@ -1,5 +1,8 @@
 function submitForm() {
   // Obtém os dados do formulário
+  document.getElementById('results-loadingIndicator').style.display = 'block';
+  document.getElementById("submitFormBtn").disabled = true;
+  
   var formData = validatePet({
     type: document.querySelector('input[name="tipo"]:checked') ? document.querySelector('input[name="tipo"]:checked').value : "",
     breed: Array.from(document.querySelectorAll('input[name="raca"]:checked')).map(option => option.value),
@@ -13,6 +16,9 @@ function submitForm() {
   getPets(formData)
     .then(results => renderResults(results))
     .catch(error => console.error("Erro ao buscar os pets:", error));
+
+  document.getElementById("submitFormBtn").disabled = false;
+  document.getElementById('results-loadingIndicator').style.display = 'none';
 }
 
 function openFilePicker() {
@@ -167,6 +173,8 @@ function renderResults(results) {
     noResultsDIV.classList.add('diverro');
     resultsContainer.appendChild(noResultsDIV);
   } else {
+    const statusresultado = document.getElementById('statusresultado');
+    statusresultado.innerHTML = 'RESULTADOS ENCONTRADOS';
     results.forEach(result => {
       // Criar um card para cada resultado
       const card = document.createElement('div');

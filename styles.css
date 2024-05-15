@@ -146,25 +146,11 @@ body {
   .subtitle {
     font-size: 0.8em;
   }
-  .loading-indicator {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    border: 2px solid #ccc;
-    border-top-color: #333;
-    animation: spin 1s linear infinite;
-    display: none; /* Ocultar por padrão */
-  }
   
   @keyframes spin {
     to { transform: rotate(360deg); }
   }
-  
+ 
   .white{
     color: #000;
     background-color: #fff;
@@ -693,21 +679,15 @@ img {
 .checkbox-group input[type="radio"] {
   margin: -5px 5px 5px 5px;
 }
-.loading-indicator {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 50%;
-  border: 2px solid #ccc;
-  border-top-color: #333;
-  animation: spin 1s linear infinite;
+.spinner-border {
   display: none; /* Ocultar por padrão */
 }
 
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+#submitFormBtn:disabled {
+  background-color: #ccc;
+  color: #999;
+  cursor: not-allowed;
 }

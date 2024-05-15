@@ -97,7 +97,6 @@
     </div>
   </div>
   <div class="upload-container white">
-  <div id="loadingIndicator" class="loading-indicator"></div>
     <input type="file" id="fileInput" style="display: none;" accept="image/*" onchange="renderImage()">
     <div id="chooseFileButton" class="upload-box" onclick="openFilePicker()">
       <p>Clique aqui para anexar a <br>foto do seu pet</p>
@@ -192,14 +191,24 @@
         <textarea id="observacoes" name="observacoes" placeholder="Inclua informações adicionais aqui..."></textarea>
       </div>
 
-      <button type="button" onclick="submitForm()">EncontreJá.Ai</button>
+      <button id="submitFormBtn" type="button" onclick="submitForm()">    
+      <div id="results-loadingIndicator" class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>EncontreJá.Ai</button>
+
     </form>
 
 
   </div>
   <div id="results" class="results-container white container text-justify">
     <h3 id="statusresultado">RESULTADOS ENCONTRADOS</h3>
-    <div id="results-container" class="row justify-content-center"></div>
+
+    <div id="results-container" class="row justify-content-center">
+    <div id="results-loadingIndicator" class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    </div>
+    
   </div>
   <div class="d-none d-sm-block">
     <div id="cadastrar" class="search-again darkblack">
