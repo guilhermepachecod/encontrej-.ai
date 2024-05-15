@@ -191,10 +191,7 @@
         <textarea id="observacoes" name="observacoes" placeholder="Inclua informações adicionais aqui..."></textarea>
       </div>
 
-      <button id="submitFormBtn" type="button" onclick="submitForm()">    
-      <div id="results-loadingIndicator" class="spinner-border" role="status">
-      <span class="sr-only">Loading...</span>
-    </div>EncontreJá.Ai</button>
+      <button id="submitFormBtn" type="button" onclick="submitForm()">EncontreJá.Ai</button>
 
     </form>
 
